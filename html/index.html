@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html unselectable="on">
+
+<head>
+	<title>Подать объявление недвижимости</title>
+	<link rel="stylesheet" href="css/beautiful.css" />
+	<script src="js/code.js"></script>
+	<script src="js/property.js"></script>
+	<script src="js/realestate.js"></script>
+	<script src="js/private.js"></script>
+	<script src="js/address.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body class="group">
+
+
+
+	<!-- ГЛАВНЫЙ ЗАГОЛОВОК -->
+	<div class="group" id="header_main">
+		<button class="button_menu_right hide" id="property_button_menu_right"><div class="circle"></div><div class="circle"></div><div class="circle"></div></button>
+		<button class="button_menu_left hide" id="gamburger_left" title="Главное меню"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+		<h1 class="header-main" id="header_main_text">Объявления недвижимости</h1>
+	</div>
+
+
+
+	<!-- ОШИБКИ-ПОДСКАЗКИ ДЛЯ РАЗЛИЧНЫХ СИТУАЦИЙ -->
+	<div id="errors">
+		<div class="error space-close" id="errors_required_all">Пожалуйста заполните основную информацию</div>
+		<div class="error space-close" id="errors_required_space">Пожалуйста укажите площадь</div>
+		<div class="error space-close" id="errors_required_deal">Пожалуста укажите тип сделки</div>
+		<div class="error space-close" id="errors_required_property">Пожалуйста укажите тип недвижимости</div>
+		<div class="error space-close" id="errors_required_price">Пожалуйста укажите цену</div>
+		<div class="error space-close" id="errors_required_address">Пожалуйста укажите адрес</div>
+		<div class="error space-close" id="errors_add_realestate">Что-то пошло не так при добавлении объявления</div>
+		<div class="error space-close" id="errors_request_error">Не удалось выполнить запрос</div>
+	</div>
+
+
+
+	<!-- КНОПКА ГАМБУРГЕР СЛЕВА -->
+	<div class="group space-close" id="main_menu">
+		<button class="radio" id="main_menu_main">Главная</button>
+		<button class="radio" id="main_menu_private">Личный кабинет</button>
+		<button class="radio" id="main_menu_search">Поиск недвижимости</button>
+		<button class="radio" id="main_menu_add">Добавить недвижимость</button>
+		<button class="radio" id="main_menu_info">Информация</button>
+	</div>
+
+
+
+	<!-- ГЛАВНАЯ СТРАНИЦА -->
+	<div class="group" id="main">
+		<img class="img" src="jpeg/main.jpeg" alt="" title="" />
+		<div class="info">Тут вы можете найти или разместить объявление об недвижимости.</div>
+		<button class="radio" id="main_private">Личный кабинет</button>
+		<button autofocus class="radio" id="main_search">Поиск недвижимости</button>
+		<button class="radio" id="main_add">Добавить недвижимость</button>
+		<button class="radio" id="main_info">Информация</button>
+		<button class="button hide" id="test777">Тест</button>
+	</div>
+
+
+
+	<!-- СПРАВОЧНАЯ ИНФОРМАЦИЯ -->
+	<div class="group space-close" id="info">
+		<a class="a_button">Как это работает</a>
+		<a class="a_button">Советы по безопастности</a>
+		<a class="a_button">Условия использования</a>
+		<a class="a_button">Ответы на вопросы</a>
+		<a class="a_button">О нас</a>
+		<a class="a_button">Контакты</a>
+		<a class="a_button">Оплата</a>
+		<a class="a_button">Twitter</a>
+		<a class="a_button">VK</a>
+		<a class="a_button">FaceBook</a>
+		<a class="a_button">Информация для риейлтеров</a>
+	</div>
+
+
+
+	<!-- ФОРМА ЛИЧНОГО КАБИНЕТА -->
+	<div class="group space-close" id="private_office">
+		<div class="group" id="authentication">
+			<button class="radio checked" name="АУТЕНТИФИКАЦИЯ" value="1" id="authentication_radio_authorization">Вход</button>
+			<button class="radio" name="АУТЕНТИФИКАЦИЯ" value="2" id="authentication_radio_registration">Регистрация</button>
+			<h2 class="header">Электропочта</h2>
+			<input class="price-input-text" type="email" id="authentication_email">
+			<h2 class="header">Пароль</h2>
+			<input class="price-input-text" type="password" id="authentication_password">
+			<div class="group space-close" id="authentication_registration">
+				<h2 class="header">Пароль еще раз</h2>
+				<input class="price-input-text" type="password" id="authentication_password2">
+			</div>
+			<button class="button" id="authentication_button_ok">OK</button>
+			<!--<button class="button" id="button_test1">Тест</button>-->
+			<div class="group" id="authentication_errors"></div>
+			<div class="space-close error" id="authentication_passwords_do_not_match">Пароли не совпадают</div>
+		</div>
+		<div class="group space-close" id="private">
+			<!--<h3 class="header-small" id="private_id">Идентификатор: ?</h3>-->
+			<h2 class="header">Электропочта</h2>
+			<h3 class="header-small" id="private_email">?</h3>
+			<!--<h1 class="header-main">Менеджер объявлений</h1>-->
+			<!--<div class="info">Тут вы можете добавлять\удалять\редактировать объявления о недвижимости</div>-->
+			<h2 class="header">Недвижимость</h2>
+			<!--<a href="realestate.html" class="a_button">Добавить недвижимость</a>-->
+			<!--<div class="info">Для редактирования недвижимости нажмите на ссылку с вашей недвижимостью ниже</div>-->
+			<div class="group space-close" id="manager_realestates_container">
+				<h3 class="header-small">Без назначения</h3>
+			</div>
+			<div class="group space-close" id="manager_container_re_sale">
+				<h3 class="header-small">Продам</h3>
+			</div>
+			<div class="group space-close" id="manager_container_re_buy">
+				<h3 class="header-small">Куплю</h3>
+			</div>
+			<div class="group space-close" id="manager_container_re_change">
+				<h3 class="header-small">Обменяю</h3>
+			</div>
+			<div class="group space-close" id="manager_container_re_rent_pay">
+				<h3 class="header-small">Сдам в аренду</h3>
+			</div>
+			<div class="group space-close" id="manager_container_re_rent_take">
+				<h3 class="header-small">Возьму в аренду</h3>
+			</div>
+			<!--<h2 class="header">Контакты</h2>
+		<input class="price-input-text" name="MANAGERPERSONA" id="manager_persona" type="text" placeholder="Имя">
+		<input class="price-input-text" name="MANAGERPHONE" type="phone" placeholder="Номер телефона">
+		<input class="price-input-text" name="MANAGERCONTACTS" type="text" placeholder="email\skype\viber\...">	-->
+			<h2 class="header">Почтовый ящик</h2>
+			<div class="group space-close" id="private_confirm_email">
+				<div class="info">На ваш почтовый ящик будет выслано письмо с уникально ссылкой, перейдя по которой вы подтвердите вашу почту. Подтвержение
+					нужно чтобы у вас была возможность восстановления пароля, если вы его забудите.</div>
+				<button class="radio" id="private_button_confirm_email">Выслать еще одно письмо</button>
+			</div>
+			<button class="radio disabled">Сменить email</button>
+			<h2 class="header">Действия с аккаунтом</h2>
+			<button class="radio" id="private_exit">Выйти из аккаунта</button>
+			<button class="radio disabled">Сменить пароль</button>
+			<button class="radio disabled">Удалить аккаут</button>
+		</div>
+		<div class="group space-close" id="email_confirm">
+			<h1 class="header-main">Подтверждение почты</h1>
+			<div class="info" id="email_message">На ваш почтовый ящик ? отправлено письмо с ссылкой для подтвержения</div>
+			<button class="button" id="email_confirm_button_back">Назад</button>
+		</div>
+	</div>
+
+
+
+	<!-- ГЛАВНАЯ ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ ЛЮБОЙ НЕДВИЖИМОСТИ -->
+	<div class="group space-close" id="main-menu">
+		<h2 class="header" id="main_menu_header1">Основная информация</h2>
+		<input class="input_text_full" id="main_menu_space" type="search" name="ПЛОЩАДЬ" placeholder="Общая площадь в квадратных метрах">
+		<button class="radio" id="menu-deal">Тип сделки</button>
+		<button class="radio" id="menu-type-realestate">Недвижимость</button>
+		<button class="radio" id="menu-price">Стоимость и другое</button>
+		<button class="radio" id="menu-address">Адрес</button>
+		<h2 class="header" id="main_menu_header_sub_info">Дополнительная информация</h2>
+		<button class="radio" id="menu_engineering">Дополнительно</button>
+		<button class="radio" id="menu_photo">Фотографии</button>
+		<textarea class="textarea" id="main_menu_textarea" rows="10" cols="85" name="ТЕКСТ" placeholder="Подробно об недвижимости (1000 букв)"></textarea>
+		<button class="button" id="main_menu_button_send">ОК</button>
+		<button class="button space-close" id="main_menu_button_search">Найти</button>
+		<button class="button" id="main-menu-button-test">Тест</button>
+	</div>
+
+
+
+	<!-- ГЛАВНАЯ ФОРМА ПОИСКА НЕДВИЖИМОСТИ -->
+	<div class="group space-close" id="search">
+		<h2 class="header">Обязательные атрибуты</h2>
+		<button class="radio" id="search_address">Адрес</button>
+		<button class="radio" id="search_type_realestate">Недвижимость</button>
+		<h2 class="header">Дополнительные атрибуты</h2>
+		<div class="group">
+			Площадь от <input class="input-number-small" id="search_space_from" name="ПЛОЩАДЬ_ОТ" type="number">м<sup>2</sup> Площадь
+			до <input class="input-number-small" id="search_space_to" name="ПЛОЩАДЬ_ДО" type="number">м<sup>2</sup>
+		</div>
+		<button class="radio" id="search_deal">Тип сделки</button>
+		<button class="radio" id="search_button_price">Стоимость и другое</button>
+		<button class="radio" id="search_engineering">Дополнительно</button>
+		<button class="checkbox" id="search_button_with_map">Показать на карте</button>
+		<button class="button" id="search_button_search">Найти</button>
+		<button class="button" id="search_button_test">Тест</button>
+	</div>
+
+
+
+	<!-- ФОРМА ВЫБОРА ТИПА СДЕЛКИ -->
+	<div class="group space-close" id="deal">
+		<button class="radio" name="СДЕЛКА" value="ПРОДАЖА" id="deal_sale">Продажа</button>
+		<button class="radio" name="СДЕЛКА" value="ПОКУПКА">Купля</button>
+		<button class="radio" name="СДЕЛКА" value="ОБМЕН">Обмен</button>
+		<button class="radio" name="СДЕЛКА" value="ПРОДАЖА_АРЕНДЫ">Продам в аренду</button>
+		<button class="radio" name="СДЕЛКА" value="ПОКУПКА_АРЕНДЫ">Куплю в аренду</button>
+		<!--<div class="info">Возможно вы захотите сначало оценить недвижимость попользовавщись ей, прежде чем покупать, тогда выберете пункт <b>"С тест драйвом"</b>. Это на ваших условиях, как сможете договарится с вашим продавцом. Например на условиях арендной платы. Если же вы продаете, тоже можно поставить такую галочку, чем сообщите клиентам что разрешите попользоватся недвижимостью, преждем чем купить ее.</div>-->
+		<button class="checkbox" name="ТЕСТ_ДРАЙВ" id="deal_button_test_drive">Тест-драйв</button>
+		<button class="button" id="deal_button_ok">ОК</button>
+	</div>
+
+
+
+	<!-- ФОРМА ВЫБОРА ТИПА НЕДВИЖИМОСТИ -->
+	<div class="group space-close" id="property">
+		<fieldset>
+			<h2 class="header">Тип</h2>
+			<button class="radio" name="ТИП" value="ЖИЛАЯ" id="">Жилая</button>
+			<button class="radio" name="ТИП" value="КОММЕРЧЕСКАЯ" id="">Коммерческая</button>
+			<button class="radio" name="ТИП" value="ПРИРОДНАЯ" id="">Природная</button>
+			<button class="radio" name="ТИП" value="ОБЩЕСТВЕННАЯ" id="">Общественная ?</button>
+		</fieldset>
+		
+		<fieldset>
+			<h2 class="header">Жилая</h2>
+			<button class="radio" name="ИМУЩЕСТВО" value="ДОМ" id="property_house">Частный Дом</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="КВАРТИРА" id="property_apartment">Квартира</button>
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Коммерческая</h2>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Офис</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Промышленность</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Розничная торговля</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Новостройка</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Гостинница</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Земельные участки</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Складская</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="" id="">Специального назначения</button>
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Природная</h2>
+	
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Офис</h2>
+			
+			<fieldset>
+				<h2 class="header">Класс</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+					<option value="">A+</option>
+					<option value="">A</option>
+					<option value="">A-</option>
+					<option value="">B+</option>
+					<option value="">B</option>
+					<option value="">B-</option>
+					<option value="">C+</option>
+					<option value="">C</option>
+					<option value="">C-</option>
+					<option value="">D+</option>
+					<option value="">D</option>
+					<option value="">D-</option>
+					<option value="">E+</option>
+					<option value="">E</option>
+					<option value="">E-</option>
+				</select>
+			</fieldset>			
+			
+			<fieldset>
+				<h2 class="header">Расположение</h2>			
+				<fieldset>
+					<h2 class="header">Город</h2>
+					<select class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+						<option value="">Внутри города</option>
+						<option value="">Пригород</option>
+						<option value="">Загород</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Близость к дороге</h2>
+					<select class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+						<option value="">У главных транспортных дорог</option>
+						<option value="">В удалении от транспортных дорог</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Подъезд</h2>
+					<select class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+						<option value="">Удобный подъезд</option>
+						<option value="">Не удобный подъезд</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Близость к центру города</h2>
+					<select class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+						<option value="">Центр</option>
+						<option value="">Близко к центру</option>
+						<option value="">Долеко от центра</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Близость к метро</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="РАСПОЛОЖЕНИЕ">
+						<option value="">5 минут до метро</option>
+						<option value="">10 минут до метро</option>
+						<option value="">20 минут до метро</option>
+						<option value="">Долеко от метро</option>
+					</select>
+				</fieldset>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Год постройки</h2>
+				<input class="price-input-text" name="ГОД_ПОСТРОЙКИ" type="number">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Вентиляция</h2>
+				<fieldset>
+					<h2 class="header">По способу побуждения движения воздуха</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Естественная</option>
+						<option value="">Механическая</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">По типу обработки воздуха</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Очистка от пыли</option>
+						<option value="">Подогрев</option>
+						<option value="">Охлаждение</option>
+						<option value="">Увлажнение</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">По направлению движения</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Приточная</option>
+						<option value="">Вытяжная</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">По типу конструкции</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Наборная</option>
+						<option value="">Моноблочная</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">По способу организации воздухообмена</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Общеобменная</option>
+						<option value="">Местная</option>
+						<option value="">Аварийная</option>
+						<option value="">Противодымная</option>
+					</select>
+				</fieldset>
+			</fieldset>			
+
+			<fieldset>
+				<h2 class="header">Автостоянка</h2>
+				<fieldset>
+					<h2 class="header">По размещению</h2>
+					<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Надземная</option>
+						<option value="">Подземная</option>
+						<option value="">Полуподземная</option>
+					</select>
+				</fieldset>
+				
+				<fieldset>
+					<h2 class="header">По способу установки автомобилей</h2>
+					<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Манежного типа с открытыми стоянками</option>
+						<option value="">Боксовые с изолированными местами стоянок</option>
+						<option value="">Комбинированные</option>
+					</select>
+				</fieldset>
+				
+				<fieldset>
+					<h2 class="header">По способу въезда автомобиля и перемещения с яруса на ярус</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Рамповые</option>
+						<option value="">Механизированные</option>
+						<option value="">Полумеханизированные</option>
+						<option value="">Автоматизированные</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Тип механизированной парковки</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Башенный</option>
+						<option value="">Мозаичный</option>
+						<option value="">Роторный</option>
+						<option value="">Другой</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Количество ярусов</h2>
+					<input class="price-input-text" name="" type="number">
+				</fieldset>
+				
+				<fieldset>
+					<h2 class="header">Количество машиномест</h2>
+					<input class="price-input-text" name="" type="number">
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Глубина</h2>
+					<input class="price-input-text" name="" type="number">
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Тип помещаемых машин ?</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Легковая ?</option>
+						<option value="">Джип ?</option>
+						<option value="">Грузовая ?</option>
+						<option value="">Фура ?</option>
+					</select>
+				</fieldset>
+
+			?	планировочными схемами
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Управляющая компания</h2>
+				<input class="price-input-text" name="">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Окна</h2>
+
+				<fieldset>
+					<h2 class="header">Окна по материалу</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Деревянные</option>
+						<option value="">Пластиковые (ПВХ)</option>
+						<option value="">Алюминиевые</option>
+						<option value="">Металлопластиковые</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Окна по направлению открывания</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Не открываемые</option>
+						<option value="">Поворотные (могут открываться внутрь или наружу)</option>
+						<option value="">Откидные (открываются в верхней части окна)</option>
+						<option value="">Подвесные (открываются в нижней части окна)</option>
+						<option value="">Поворотные по вертикальной оси (открываются в левый или правый бок; при открытии одна половина окна выходит наружу, другая — внутрь)</option>
+						<option value="">Поворотные по горизонтальной оси (аналоги предыдущего способа, только открываются вверх или вниз)</option>
+						<option value="">С раздвижной створкой (способ открывания по типу шкафа-купе)</option>
+						<option value="">Со складной створкой (способ открывания по типу гармошки)</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Окна по конфигурации</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Прямоугольные (могут быть горизонтальными и вертикальными, одностворчатыми, двустворчатыми, трехстворчатыми и так далее)</option>
+						<option value="">Треугольные</option>
+						<option value="">Круглые</option>
+						<option value="">Трапециевидные</option>
+						<option value="">Арочные</option>
+						<option value="">Любые комбинации с вышеперечисленными видами</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Окна по назначению</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Шумозащитные (звукоизоляционные). Могут иметь утолщенные стекла, а также дополнительное покрытие на них для поглощения или отражения шума</option>
+						<option value="">Энергосберегающие (с внутренней стороны покрыты атомами серебра, которые производят отражающий эффект, в результате чего происходит сохранение тепла)</option>
+						<option value="">Ударопрочные (при производстве стекол происходит ламинирование специальной смолой)</option>
+						<option value="">Полузеркальные (имеют рефлекторные стекла, которые отражают солнечные лучи)</option>
+						<option value="">Тонированные (стекла покрыты компонентом, поглощающим солнечные лучи)</option>
+					</select>
+				</fieldset>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Наличие</h2>
+				<button class="checkbox" name="">Охраняемой автостоянки, из расчета минимум 1 место на 100м2 полезной площади</button>
+				<button class="checkbox" name="">Оптико-волоконной связи</button>
+				<button class="checkbox" name="">Общей охраны</button>
+				<button class="checkbox" name="">Окон из упроченного алюминия, ПВХ или композиционных деревянных окон с двойным стеклопакетом</button>
+				<button class="checkbox" name="">Профессионального менеджмента</button>
+				<button class="checkbox" name="">Импортных лифтов (или лифтов, произведенных по лицензии фирмы ОТИС)</button>
+				<button class="checkbox" name="">Строительство должно быть осуществлено по высочайшим стандартам качества</button>
+				<button class="checkbox" name="">Гибко перестраиваемых этажей с несущими стенами только по периметру и лестничным колодцам</button>
+				<button class="checkbox" name="">Систем пожарной и охранной сигнализации по СНиП</button>
+				<button class="checkbox" name="">Возможность установки фальшполов и подвесных потолков</button>
+				<button class="checkbox" name="">Индивидуальный (авторский) проект.</button>
+				<button class="checkbox" name="">Наружная отделка высококачественными материалами</button>
+				<button class="checkbox" name="">Внутренняя отделка по индивидуальному заказу арендатора</button>
+				<button class="checkbox" name="">Панорамное остекление</button>
+				<button class="checkbox" name="">Автоматизированные системы жизнеобеспечения</button>
+				<!--<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>
+				<button class="checkbox" name=""></button>-->
+			</fieldset>
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Размеры</h2>
+			<fieldset>
+				<h2 class="header">Высота от пола до пола следующего этажа</h2>
+				<input class="price-input-text" name="">
+			</fieldset>
+			<fieldset>
+				<h2 class="header">Высота от фальшпола до подвесного потолка в законченном состоянии</h2>
+				<input class="price-input-text" name="">
+			</fieldset>
+			<!--? площадь здания
+			? высота здания
+			? количество кабинетов, туалетов, комнат отдыха и что там еще может быть
+			? расстояние между колоннами-->
+
+
+		</fieldset>
+
+
+
+		<fieldset>
+			<h2 class="header">Отопление</h2>
+
+			<fieldset>
+				<h2 class="header">Типы</h2>
+				<select size="5" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Теплые поверхности</option>
+					<option value="">Радиаторы и Батареи</option>
+					<option value="">Нагретый воздух</option>
+					<option value="">Печи и камины</option>
+					<option value="">Динамическое ?</option>
+				</select>
+			</fieldset>
+
+			<!--Показать при выборе теплые поверхности-->
+			<fieldset>
+				<h2 class="header">Теплые поверхности</h2>
+				<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Пол</option>
+					<option value="">Стены</option>
+					<option value="">Потолок</option>
+				</select>
+
+				<fieldset>
+					<h2 class="header">Типы поверхностей</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Водяная</option>
+						<option value="">Электрический</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе водяной-->
+				<fieldset>
+					<h2 class="header">Типы водяных поверхностей</h2>
+					<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Бетонный стяжки</option>
+						<option value="">Алюминиевые пласты</option>
+						<option value="">Деревянное перекрытия</option>
+					</select>
+				</fieldset>
+				<!--Показать при выборе водяной-->
+				<fieldset>
+					<h2 class="header">Типы труб для водяных поверхностей</h2>
+					<select size="11" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Полибутеновые</option>
+						<option value="">Металлопластиковые</option>
+						<option value="">Нержавеющие</option>
+						<option value="">Черная сталь</option>
+						<option value="">Металлополимер</option>
+						<option value="">Полипропилен</option>
+						<option value="">Медь</option>
+						<option value="">Оцинкованная сталь</option>
+						<option value="">Гофрированная нержавейка</option>
+						<option value="">Полиэтилен</option>
+						<option value="">Сшитый полиэтилен</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе электрических-->
+				<fieldset>
+					<h2 class="header">Типы электрических поверхностей</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Кабельный</option>
+						<option value="">Пленочный или инфракрасный</option>
+						<option value="">Нагревательные маты</option>
+						<option value="">Электроковер</option>
+					</select>
+				</fieldset>
+			</fieldset>
+
+			<!--Показать при выборе Батареи-->
+			<fieldset>
+				<h2 class="header">Радиаторы и Батареи</h2>
+				<fieldset>
+					<h2 class="header">Типы теплового носителя</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Вода</option>
+						<option value="">Пар</option>
+						<option value="">Электричество</option>
+					</select>
+				</fieldset>
+
+				<fieldset>
+					<h2 class="header">Радиаторы</h2>
+					<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Чугунные</option>
+						<option value="">Стальные</option>
+						<option value="">Алюминиевые</option>
+						<option value="">Биметаллические</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе Электричество-->
+				<fieldset>
+					<h2 class="header">Типы электрических радиаторов и батарей</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Масляные</option>
+						<option value="">Конвекторные</option>
+						<option value="">Тепловентиляторы</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе Вода-->
+				<fieldset>
+					<h2 class="header">По способу перемещения теплоносителя</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Принудительное побуждение</option>
+						<option value="">Естественное побуждение</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе Пар-->
+				<fieldset>
+					<h2 class="header">По способу присоединения приборов</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Низкого давления</option>
+						<option value="">Высокого давления</option>
+					</select>
+				</fieldset>
+
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Центральное или автономное</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="" title="Источник тепловой энергии для центрального отопления находится вне здания; теплоноситель транспортируется к нему и обратно по двум теплоизолированным трубам — теплотрассе. Тепловую энергию вырабатывает котельная или ТЭЦ.">
+							Центральное</option>
+						<option value="" title="Обогревает исключительно то здание, в котором размещено. В эту категорию входят котлы, печи и тепловые насосы различных типов">
+							Автономное</option>
+					</select>
+				</fieldset>
+
+				<!--Показать при выборе Воды или Пар и выборе Центральное-->
+				<fieldset>
+					<h2 class="header">По способу подачи тепла</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="" title="Зависимые используют для циркуляции в системе отопления и для нужд горячего водоснабжения непосредственно тот теплоноситель, который поступает из теплотрассы">
+							Зависимые</option>
+						<option value="" title="Независимая схема подразумевает замкнутый контур с постоянным объемом теплоносителя, для нагрева которого водой из теплотрассы используется теплообменник">
+							Независимые</option>
+					</select>
+				</fieldset>
+
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Котел</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Газовые</option>
+						<option value="">Твердотопливные</option>
+						<option value="">Жидкотопливные</option>
+						<option value="">Электрические</option>
+					</select>
+				</fieldset>
+				
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Подключение отопительных приборов</h2>
+					<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Боковой</option>
+						<option value="">Диагональный</option>
+						<option value="">Нижний</option>
+					</select>
+				</fieldset>
+				
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Cпособ разводки</h2>
+					<select size="5" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Верхней</option>
+						<option value="">Нижней</option>
+						<option value="">Горизонтальной</option>
+						<option value="">Вертикальной</option>
+						<option value="">Комбинированной</option>
+					</select>
+				</fieldset>
+
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Трубы</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Черная сталь</option>
+						<option value="">Металлополимер</option>
+						<option value="">Полипропилен</option>
+						<option value="">Медь</option>
+						<option value="">Оцинкованная сталь</option>
+						<option value="">Гофрированная нержавейка</option>
+						<option value="">Полиэтилен</option>
+						<option value="">Сшитый полиэтилен</option>
+					</select>
+				</fieldset>
+
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">По способу присоединения приборов</h2>
+					<select multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Однотрубные</option>
+						<option value="">Двухтрубные</option>
+					</select>
+				</fieldset>
+				
+				<!--Показать для Воды или Пар-->
+				<fieldset>
+					<h2 class="header">Двухтрубные схемы</h2>
+					<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+						<option value="">Попутные</option>
+						<option value="">Тупиковые</option>
+					</select>
+				</fieldset>
+			</fieldset>
+
+		</fieldset>
+
+		<!--Показать при выборе нагрев воздуха-->
+		<fieldset>
+			<h2 class="header">Воздушное отопления</h2>
+			<fieldset>
+				<h2 class="header">По месту приготовления воздуха</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="" title="Где нагревание и подача воздуха производится непосредственно в отапливаемом помещении с помощью отопительных и отопительно-вентиляционных агрегатов">
+						Местные системы</option>
+					<option value="" title="Где воздух нагревается в воздухонагревательной установке и по каналам подается в одно или несколько помещений">
+						Центральные системы</option>
+				</select>
+			</fieldset>
+
+			<!--Показать при выборе местные-->
+			<fieldset>
+				<h2 class="header">Местные системы</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Бесканальные</option>
+					<option value="">Канальные</option>
+				</select>
+			</fieldset>
+			
+			<fieldset>
+				<h2 class="header">По выполняемым функциям</h2>
+				<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Только отопительные</option>
+					<option value="">Полностью рециркуляционные и системы</option>
+					<option value="">С частичной рециркуляцией</option>
+					<option value="">Прямоточные</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Способ нагрева воздуха</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Прямой нагрев</option>
+					<option value="">Косвенный нагрев</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Вид используемого топлива</h2>
+				<select size="8" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Газовые системы</option>
+					<option value="">Дизельные системы</option>
+					<option value="">Отопления на пеллетах</option>
+					<option value="">Электрические системы</option>
+					<option value="">Дровяные системы</option>
+					<option value="">Угольные системы</option>
+					<option value="">Солнечные системы</option>
+					<option value="">Отопления тепловым насосом</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">В наличии</h2>
+				<select size="6" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Воздушно-тепловая завеса в открытом проеме входа</option>
+					<option value="">?</option>
+					<option value="">?</option>
+					<option value="">?</option>
+					<option value="">?</option>
+				</select>
+			</fieldset>
+			
+		</fieldset>
+
+		<!--Показать при выборе печки-->
+		<fieldset>
+			<h2 class="header">Печки</h2>
+			<fieldset>
+				<h2 class="header">Местные печи по типу</h2>
+				<select multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Умеренного прогрева</option>
+					<option value="">Повышенного прогрева</option>
+					<option value="">Непрерывного горения</option>
+					<option value="">Отопительно-варочные</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Теплоемкость</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Не теплоемкие</option>
+					<option value="">теплоемкие</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Конвективная система</h2>
+				<select size="4" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="" title="Состоит из одно-, двух- и многооборотного газохода, включающего вертикальные или горизонтальные дымообороты">
+						Последовательная</option>
+					<option value="" title="Одно- и двух- дымооборотная система">
+						Параллельная</option>
+					<option value="" title="Отсутствуют дымообороты">
+						Бесканальная (Колпаковая)</option>
+					<option value="" title="Одновременно входят вертикальные и горизонтальные дымообороты или горизонтальные и вертикальные дымообороты, а также бесканальная надтопочная часть (колпак), или горизонтальные и вертикальные каналы и тепловоздушные камеры">
+						Комбинированная</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">По толщине стенок теплоемкие печи</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="" title="(с толщиной стенок 120мм и более)">
+						Толстостенные</option>
+					<option value="" title="Толщина наружных стенок топливника 120 мм, а прочих - до 70 мм">
+						Тонкостенные</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">По форме</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Прямоугольные</option>
+					<option value="">Квадратные</option>
+					<option value="">Круглые</option>
+					<option value="">Угловые</option>
+					<option value="">Многоугольные</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">По этажности</h2>
+				<select size="2" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Одноярусные</option>
+					<option value="">Двухъярусные</option>
+				</select>
+			</fieldset>
+			
+			<fieldset>
+				<h2 class="header">По количеству топок</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Одна</option>
+					<option value="">Две</option>
+					<option value="">Три</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Способ отвода газов</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="">
+					<option value="Отводит дым в коренную трубу или в канал, расположенный в стене">
+						Насадная труба</option>
+					<option value="Отдельно стоящие сооружения с самостоятельным фундаментом">
+						Коренная труба</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Технологии возведения печи</h2>
+				<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Полносборная</option>
+					<option value="">Монтируемыя</option>
+					<option value="">Выкладываемые</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Используемое топливо</h2>
+				<select size="3" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">дров</option>
+					<option value="">углей</option>
+					<option value="">торфа</option>
+					<option value="">газа</option>
+					<option value="">печного бытового топлива</option>
+					<option value="">соломы</option>
+					<option value="">кизяка</option>
+					<option value="">кожуры семечек</option>
+					<option value="">опилок</option>
+					<option value="">жидкого топлива (форсуночные и капельные)</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Функциональность</h2>
+				<select size="12" multiple class="Cкрытый-Cписок-Широкий" name="">
+					<option value="">Отопления помещений</option>
+					<option value="">Приготовления пищи</option>
+					<option value="">Запаривания кормов</option>
+					<option value="">Сушки фруктов</option>
+					<option value="">Сушки пиломатериалов</option>
+					<option value="">Сушки одежды</option>
+					<option value="">Нагрев воды для отопления</option>
+					<option value="">Нагрев воды для хозяйственных нужд</option>
+					<option value="">Камин</option>
+					<option value="">Термос</option>
+					<option value="">Духовой шкаф</option>
+					<option value="">?</option>
+				</select>
+			</fieldset>
+		</fieldset>
+
+
+<!--+		Расположение
++		Тип здания
++		Год постройки
+		Права
+		Управление зданием
+		Конструктивные решения
+		Межэтажные перекрытия
+		Окна
+		Планировка и отделка
+		Инженерные системы
+		Системы кондиционирования и вентиляции
+		Телекоммуникации
+		Парковка
+		Лифты
+		Охрана
+		Инфраструктура-->
+
+
+		<fieldset>
+			<h2 class="header">Имущество (Удалится)</h2>
+			<button class="radio" name="ИМУЩЕСТВО" value="КВАРТИРА" id="property_apartment">Квартира</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ДОМ" id="property_house">Частный Дом</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ЗЕМЛЯ" id="property_parcel">Земельный участок</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ГАРАЖ" id="property_garage">Гараж, Машиноместо</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ПОМЕЩЕНИЕ" id="property_room">Помещение, Склад, Офис</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ГОСТИНИЦА" id="property_hotel">Гостиница</button>
+			<button class="radio" name="ИМУЩЕСТВО" value="ДРУГОЕ" id="property_other">Другое</button>
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Собственность</h2>
+			<button class="radio checked" id="Собственность-личная" name="СОБСТВЕННОСТЬ" value="ЛИЧНАЯ">Личная</button>
+			<button class="radio" id="Собственность-долевая" name="СОБСТВЕННОСТЬ" value="ДОЛЕВАЯ">Долевая</button>
+		</fieldset>
+
+		<fieldset class="space-close" id="Невидимый-блок-если-собственность-личная">
+			<fieldset>
+				<h2 class="header">Доля недвижимости в %</h2>
+				<input class="price-input-text" name="ДОЛЯ" type="number">
+			</fieldset>
+			<fieldset id="Видимый-блок-только-для-жилья" title="Количество комнат которое вы хотите продать, купить, купить в аренду, продать в аренду или обменять">
+				<h2 class="header">Комнат для сделки</h2>
+				<input class="price-input-text" id="Комнат-для-сделки" name="КОМНАТ_ДЛЯ_СДЕЛКИ" type="number">
+			</fieldset>
+		</fieldset>
+
+		<div class="group space-close" id="Невидимый-блок-для-земельного-участка">
+
+			<fieldset title="Общее количество комнат имеющихся в недвижимости">
+				<h2 class="header">Всего комнат</h2>
+				<input class="price-input-text" name="КОМНАТ_ВСЕГО" type="number">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Жизненный цыкл</h2>
+				<button class="radio" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="ПЛАНИРОВАНИЕ">Планирование</button>
+				<button class="radio" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="СТРОИТЕЛЬСТВО">Строительство</button>
+				<button class="radio" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="ПЕРВИЧНАЯ">Реализация (Первичная)</button>
+				<button class="radio checked" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="ВТОРИЧНАЯ">Эксплуатация (Вторичная)</button>
+				<button class="radio" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="КАПИТАЛЬНЫЙ_РЕМОНТ">Требует капитальный ремонта</button>
+				<button class="radio" name="ЖИЗНЕННЫЙ_ЦЫКЛ" value="СНОС">Требует сноса</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Всего этажей</h2>
+				<input class="price-input-text" name="ЭТАЖЕЙ_ВСЕГО" type="number">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Этаж</h2>
+				<input class="price-input-text" name="ЭТАЖ" type="number">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Высота потолка</h2>
+				<input class="price-input-text" name="ВЫСОТА_ПОТОЛКА">
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Основной материал и тип постройки</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="МАТЕРИАЛ">
+					<option value="ПАНЕЛЬНОЕ">Панельный</option>
+					<option value="МОНОЛИТНОЕ">Монолитный</option>
+					<option value="БЛОЧНОЕ">Блочный</option>
+					<option value="КАРКАСНЫЙ">Каркасный</option>
+					<option value="КИРПИЧНОЕ">Кирпичный</option>
+					<option value="ДЕРЕВЯННОЕ">Деревянный</option>
+					<option value="ЖЕЛЕЗОБЕТОННОЕ">Железобетонный</option>
+					<option value="МЕТАЛЛИЧЕСКОЕ">Металлический</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Фундамент</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="ФУНДАМЕНТ">
+					<option value="ЛЕНТОЧНЫЙ">Ленточный</option>
+					<option value="СТОЛБЧАТЫЙ">Столбчатый</option>
+					<option value="ПЛИТНЫЙ">Плитный</option>
+					<option value="КОНТИНУАЛЬНЫЙ">Континуальный</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Отопление</h2>
+				<select class="Cкрытый-Cписок-Широкий" name="ОТОПЛЕНИЕ">
+					<option value="ПЕЧНОЕ">Печное</option>
+					<option value="ГАЗОВОЕ">Газовое</option>
+					<option value="ВОДЯНОЕ">Водяное</option>
+					<option value="ЭЛЕКТРИЧЕСКОЕ">Электрическое</option>
+					<option value="ВОЗДУШНОЕ">Воздушное</option>
+				</select>
+			</fieldset>
+		</div>
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ НЕДВИЖИМОСТИ КВАРТИРА\ЧАСТЬ КВАРТИРЫ -->
+		<div class="group space-close" id="apartment">
+
+			<fieldset>
+				<h2 class="header">Статус</h2>
+				<button class="radio checked" name="СТАТУС_КВАРТИРЫ" value="КВАРТИРА" title="Cтруктурно обособленное помещение в многоквартирном доме, обеспечивающее возможность прямого доступа к помещениям общего пользования в таком доме и состоящее из одной или нескольких комнат, а также мест вспомогательного использования, предназначенных для удовлетворения хозяйственно-бытовых и иных нужд граждан, связанных с их проживанием в таком помещении.">
+				Квартира
+				</button>
+				<button class="radio" name="СТАТУС_КВАРТИРЫ" value="КОММУНАЛЬНАЯ_КВАРТИРА">
+				Коммунальная квартира
+				</button>
+				<button class="radio" name="СТАТУС_КВАРТИРЫ" value="ЖИЛОЕ_ПОМЕЩЕНИЕ" title="Изолированное помещение, которое является недвижимым имуществом и пригодно для постоянного проживания граждан, отвечает установленным санитарным и техническим правилам и нормам, иным требованиям законодательства">
+				Жилое помещение
+				</button>
+			</fieldset>
+			<fieldset>
+				<h2 class="header">Жилая площадь</h2>
+				<input class="price-input-text" name="ЖИЛАЯ_ПЛОЩАДЬ"></label>
+			</fieldset>
+			<fieldset id="realestate_f_add_room">
+				<h2 class="header">Добавьте какие есть комнаты</h2>
+				<div id="apartment_container_for_rooms"></div>
+				<button class="button" type="button" id="apartment_add_room">Добавить комнату</button>
+			</fieldset>
+			<fieldset id="realestate_present_room" class="hide">
+				<h2 class="header">Комнаты</h2>
+				<div class="group" id="realestate_container_present_room">
+				</div>
+			</fieldset>
+			<fieldset>
+				<h2 class="header">Другое</h2>
+				<button class="checkbox" name="ЕСТЬ_ДЕТСКАЯ_ПЛОЩАДКА">Детская площадка</button>
+				<button class="checkbox" name="КВАРТИРА_СТУДИЯ" title="Кварти́ра-сту́дия — тип квартиры, основным отличием которого является отсутствие внутренних перегородок между помещениями. Однако, часто встречаются и многокомнатные студии.">
+				Квартира-Студия
+			</button>
+				<button class="checkbox" name="НЕ_ШУМНЫЕ_СОСЕДИ">Не шумные соседи</button>
+			</fieldset>
+			<button class="button" id="apartment_button_ok">ОК</button>
+		</div>
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ НЕДВИЖИМОСТИ ДОМ\ЧАСТЬ ДОМА -->
+		<div class="group space-close" id="house">
+
+			<fieldset>
+				<h2 class="header">Комнаты и площадь</h2>
+				<label class="label">Жилая площадь <input class="input-number" name="HOUSERESIDENTIALSPACE"></label>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Добавьте какие есть комнаты</h2>
+				<div id="house_container_rooms"></div>
+				<button class="button" id="house_addroom">Добавить комнату</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Другое</h2>
+				<button class="checkbox" name="ДЕТСКАЯ_ПЛОЩАДКА">Детская площадка</button>
+				<button class="checkbox" name="НЕ_ШУМНЫЕ_СОСЕДИ">Не шумные соседи</button>
+				<button class="checkbox" name="ПОГРЕБ">Погреб</button>
+				<button class="checkbox" name="ПОДВАЛ">Подвал</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Верх дома</h2>
+				<button class="radio" name="ВЕРХ_ДОМА" value="МАНСАРДА">Мансарда</button>
+				<button class="radio" name="ВЕРХ_ДОМА" value="ЧЕРДАК">Чердак</button>
+			</fieldset>
+
+			<button class="button" id="house_button_ok">ОК</button>
+		</div>
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ НЕДВИЖИМОСТИ ЗЕМЕЛЬНЫЙ УЧАСТОК -->
+		<div class="group space-close" id="parcel">
+			<fieldset>
+				<h2 class="header">Есть пасека или сад?</h2>
+				<button class="checkbox" id="parcel_paseka_checkbox" name="ЕСТЬ_ПАСЕКА">Есть пасека</button>
+				<button class="checkbox" id="parcel_in_garden_checkbox" name="ЕСТЬ_САД">Есть сад</button>
+			</fieldset>
+
+			<fieldset id="parcel_space_paseka" class="space-close">
+				<h2 class="header">Пасека</h2>
+				<label class="label">Площадь пасеки <input class="input-number"
+				name="ПЛОЩАДЬ" placeholder="Площадь"></label>
+				<label class="label">Ульев <input class="input-number"
+				name="КОЛИЧЕСТВО_УЛЬЕВ" type="number" placeholder="Количество"></label>
+			</fieldset>
+
+			<fieldset id="parcel_in_garden" class="space-close">
+				<h2 class="header">Сад</h2>
+				<div id="parcel_container_plants"></div>
+				<button class="button" id="parcel_add_plant_button">Добавить растение</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">С возможностью подключить</h2>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_ЭЛЕКТРИЧЕСТВО">Электричество</button>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_ВОДОПРОВОД">Водопровод</button>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_ГАЗ">Газ</button>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_КАНАЛИЗАЦИЮ">Канализацию</button>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_ОТОПЛЕНИЕ">Отопление</button>
+				<button class="checkbox" name="МОЖНО_ПОДКЛЮЧИТЬ_ИНТЕРНЕТ">Интернет</button>
+			</fieldset>
+			<fieldset>
+				<h2 class="header">С хозпостройками</h2>
+				<div id="parcel_container_hoz"></div>
+				<button class="button" id="parcel_button_add_hoz">Добавить</button>
+			</fieldset>
+			<button class="button" id="parcel_button_ok">ОК</button>
+		</div>
+
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ НЕДВИЖИМОСТИ ГАРАЖ -->
+		<div class="group space-close" id="garage">
+			<fieldset>
+				<h2 class="header">Гараж или машиноместо</h2>
+				<button class="radio checked" id="garage_garage" name="СТОЯНКА" value="ГАРАЖ">Гараж</button>
+				<button class="radio" id="garage_mesto" name="СТОЯНКА" value="МАШИНОМЕСТО">Машиноместо</button>
+			</fieldset>
+
+			<fieldset class="group space-close" id="garage_mesto_expander">
+				<h2 class="header">Тип машиноместа</h2>
+				<button class="radio" name="ТИП_МАШИНОМЕСТА" value="ПОДЗЕМНЫЙ_ПАРКИНГ">Подземный паркинг</button>
+				<button class="radio" name="ТИП_МАШИНОМЕСТА" value="КРЫТАЯ_СТОЯНКА">Крытая стоянка</button>
+				<button class="radio" name="ТИП_МАШИНОМЕСТА" value="МНОГОУРОВНЕВЫЙ_ПАРКИНГ">Многоуровневый паркинг</button>
+				<button class="radio" name="ТИП_МАШИНОМЕСТА" value="ОТКРЫТАЯ_СТОЯНКА">Открытая стоянка</button>
+				<label class="label">Название комплекса <input class="input-text"
+				name="НАЗВАНИЕ_КОМПЛЕКСА" type="text"></label>
+			</fieldset>
+
+			<fieldset class="group space-open" id="garage_garage_expander">
+				<button class="checkbox space-close" id="garagedj9283j" name="ГАРАЖ_И_ЗЕМЛЯ_В_СОБСТВЕННОСТИ">Гараж и земля в собственности</button>
+				<button class="checkbox" name="ЕСТЬ_ПОГРЕБ">Есть погреб</button>
+				<button class="checkbox" name="ЕСТЬ_ПОДВАЛ">Есть подвал</button>
+				<button class="checkbox" name="ЕСТЬ_ЯМА">Есть яма</button>
+				<button class="checkbox" name="ЕСТЬ_ПОЛКИ">Есть полки</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Другое</h2>
+				<button class="checkbox" name="ОХРАНЯЕТСЯ">Охраняется</button>
+				<button class="checkbox" name="ВИДЕОНАБЛЮДЕНИЕ">Видеонаблюдение</button>
+				<button class="checkbox" name="ОСВЕЩЕНИЕ">Освещение</button>
+				<label class="label">Высота ворот <input class="input-number"
+				name="ВЫСОТА_ВОРОТ"></label>
+			</fieldset>
+
+			<button class="button" id="garage_button_ok">ОК</button>
+		</div>
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ РАЗЛИЧНЫХ ПОМЕЩЕНИЙ -->
+		<div class="group space-close" id="room">
+			<fieldset>
+				<h2 class="header">Тип помещения</h2>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="ОФИСНОЕ">Офисное(контора)</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="ТОРГОВОЕ">Торговое</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="СКЛАДСКОЕ">Складское</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="СВОБОДНОГОНАЗНАЧЕНИЯ">Свободного назначения</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="САЛОНКРАСОТЫ">Салон красоты, парикмахерская</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="ПРОИЗВОДСТВЕННОГОНАЗНАЧЕНИЯ">Производственного назначения</button>
+				<button class="radio" name="ТИП_ПОМЕЩЕНИЯ" value="ОБЩЕСТВЕННОГОПИТАНИЯ">Общественного питания</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Дополнительно имеется</h2>
+				<div id="room_container_add_room"></div>
+				<button class="button" id="room_add_room_button">Добавить</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Другое</h2>
+				<button class="checkbox" name="ОТДЕЛЬНЫЙ_ПОДЪЕЗД">Отдельный подъезд</button>
+				<button class="checkbox" name="ОТДЕЛЬНЫЙ_ЭЛЕКТРОЩИТОК">Отдельный электрощиток</button>
+			</fieldset>
+
+			<button class="button" id="room_button_ok">ОК</button>
+		</div>
+
+
+
+
+		<!-- ФОРМА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ НЕДВИЖИМОСТИ ГОСТИННИЦА -->
+		<div class="group space-close" id="hotel">
+			<fieldset>
+				<h2 class="header">Общая информация</h2>
+				<label class="label">Сколько номеров <input class="input-number"
+					name="КОЛИЧЕСТВО_НОМЕРОВ" type="number"></label>
+				<label class="label">
+					Сколько звезд
+					<select class="select" name="КОЛИЧЕСТВО_ЗВЕЗД">
+						<option value="5">5</option>
+						<option value="4">4</option>
+						<option value="3">3</option>
+						<option value="2">2</option>
+						<option value="1">1</option>
+					</select>
+				</label>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Дополнительные помещения</h2>
+				<div id="hotel_container_dop_room"></div>
+				<button class="button" id="hotel_add_dop_button">Добавить</button>
+			</fieldset>
+
+			<fieldset>
+				<h2 class="header">Разное</h2>
+				<button class="checkbox" name="ЕСТЬ_НОМЕРА_ДЛЯ_НЕ_КУРЯЩИХ">Номера для не курящих</button>
+				<button class="checkbox" name="ЕСТЬ_СЕМЕЙНЫЕ_НОМЕРА">Семейные номера</button>
+				<button class="checkbox" name="ЕСТЬ_КРЫТЫЙ_ПЛАВАТЕЛЬНЫЙ_БАССЕЙН">Крытый плавательный бассейн</button>
+				<button class="checkbox" name="ЕСТЬ_СПА_И_ОЗДОРОВИТЕЛЬНЫЙ_ЦЕНТР">Спа и оздоровительный центр</button>
+				<button class="checkbox" name="ЕСТЬ_РЕСТОРАН_СТОЛОВАЯ">Ресторан \ Столовая</button>
+				<button class="checkbox" name="ЕСТЬ_ФИТНЕС-ЦЕНТР">Фитнес-центр</button>
+				<button class="checkbox" name="ЕСТЬ_УДОБСТВА_ДЛЯ_ГОСТЕЙ_С_ОГРАНИЧЕННЫМИ_ФИЗИЧЕСКИМИ_ВОЗМОЖНОСТЯМИ">Удобства для гостей с ограниченными физическими возможностями</button>
+				<button class="checkbox" name="ЕСТЬ_КОНФЕРЕНЦ-ЗАЛ">Конференц-зал</button>
+				<button class="checkbox" name="ЕСТЬ_БАНКЕТНЫЙ_ЗАЛ">Банкетный зал</button>
+				<button class="checkbox" name="ЕСТЬ_БАР">Бар</button>
+				<button class="checkbox" name="ЕСТЬ_ЛЮКС_ДЛЯ_НОВОБРАЧНЫХ">Люкс для новобрачных</button>
+				<button class="checkbox" name="ЕСТЬ_ПАРИКМАХЕРСКАЯ_САЛОН_КРАСОТЫ">Парикмахерская/салон красоты</button>
+				<button class="checkbox" name="ЕСТЬ_САУНА">Сауна</button>
+				<button class="checkbox" name="ЕСТЬ_СОЛЯРИЙ">Солярий</button>
+				<button class="checkbox" name="ЕСТЬ_ТУРЕЦКАЯБАНЯ">Турецкая баня</button>
+				<button class="checkbox" name="ЕСТЬ_МАССАЖ">Массаж</button>
+			</fieldset>
+
+			<button class="button" id="hotel_button_ok">ОК</button>
+		</div>
+
+
+
+
+		<!--ФОРМА ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ ДРУГОЙ НЕДВИЖИМОСТИ -->
+		<div class="group space-close" id="other">
+			<fieldset>
+				<div id="other-main-container"></div>
+				<button class="button" id="other_button_add_building_new">Добавить здание</button>
+			</fieldset>
+			<button class="button" id="other_button_ok">ОК</button>
+		</div>
+
+
+
+		<button class="button" id="property_button_back">ОК</button>
+	</div>
+
+
+
+	<!-- ФОРМА ЦЕНА ДЛЯ ДОБАВЛЕНИЯ\РЕДАКТИРОВАНИЯ ЛЮБОЙ НЕДВИЖИМОСТИ -->
+	<div class="group space-close" id="price">
+		<label class="price-label-number">
+			Цена <input id="price-price" name="ЦЕНА" class="price-input-number" type="number">
+		</label>
+
+		<select class="price_select" id="price-currency" name="ВАЛЮТА">
+			<option value="₽">₽</option>
+			<option value="$">$</option>
+			<option value="€">€</option>
+			<option value="¥">¥</option>
+		</select>
+		<button class="checkbox" id="price_checkbox_isbyagreement" name="ПО_ДОГОВОРЕННОСТИ">По договоренности</button>
+		<h2 class="header">Способ оплаты</h2>
+		<button class="checkbox" id="price-checkbox-cash" name="НАЛИЧКА" title="Вы готовы оплатить\купить наличкой">Наличка</button>
+		<button class="checkbox" id="price-checkbox-card" name="БАНКОВСКАЯ_КАРТА" title="Вы готовы оплатить\купить переводом на карту">На банковскую карту</button>
+		<button class="checkbox" id="price-checkbox-electron-money" name="ЭЛЕКТРОННЫЕ_ДЕНЬГИ" title="Вы готовы оплатить\купить электронными деньгами(например яндекс или вебмани)">Электронные деньги</button>
+		<button class="checkbox" id="price-checkbox-prepayment" name="ПРЕДОПЛАТА" title="Требование предоплаты при продаже или Вы готовы сделать предоплату при покупке">С предоплатой</button>
+		<h2 class="header">Кадастровый номер</h2>
+		<input class="price-input-text" id="price-codastr-number" name="КАДАСТРОВЫЙ_НОМЕР" type="text" placeholder="АА:ВВ:ССССРРL:КК"
+			title="Када́стровый но́мер — уникальный номер объекта недвижимости, присваиваемый ему при осуществлении кадастрового и технического учёта.">
+
+		<h2 class="header">Документы</h2>
+		<button class="checkbox" id="price-checkbox-is-document" name="ЕСТЬ_ДОКУМЕНТЫ" title="Собственник любого объекта недвижимости должен иметь на руках пакет документов, подтверждающих его права на объект, а также содержащих технические и идентификационные характеристики объекта. Без этих документов он не может подтвердить свой статус, а также распорядиться недвижимостью (продать, заложить, сдать в аренду). В этот пакет документов входят правоустанавливающие документы, технический паспорт, идентификационные документы на земельный участок. Важным является поддержание этих документов в актуальном состоянии.">
+	С оформлеными документами</button>
+
+		<button id="price-ready" class="button">ОК</button>
+	</div>
+
+
+
+	<!-- ФОРМА ЦЕНЫ ДЛЯ ПОИСКА НЕДВИЖИМОСТЕЙ -->
+	<div class="group space-close" id="search_price">
+		<h2 class="header">Цена</h2>
+		<div class="group">
+			От <input class="input_search_price" id="search_price_from" name="ЦЕНА_ОТ" type="number"> До <input class="input_search_price"
+				id="search_price_to" name="ЦЕНА_ДО" type="number">
+			<select class="price_select" id="search_price_currency" name="ВАЛЮТА">
+			<option value="₽">₽</option>
+			<option value="$">$</option>
+			<option value="€">€</option>
+			<option value="¥">¥</option>
+		</select>
+		</div>
+		<button class="checkbox" id="search_price_checkbox_isbyagreement" name="ПО_ДОГОВОРЕННОСТИ">По договоренности</button>
+		<h2 class="header">Способ оплаты</h2>
+		<button class="checkbox" name="НАЛИЧКА" title="Вы готовы оплатить\купить наличкой">Наличка</button>
+		<button class="checkbox" name="БАНКОВСКАЯ_КАРТА" title="Вы готовы оплатить\купить переводом на карту">На банковскую карту</button>
+		<button class="checkbox" name="ЭЛЕКТРОННЫЕ_ДЕНЬГИ" title="Вы готовы оплатить\купить электронными деньгами(например яндекс или вебмани)">Электронные деньги</button>
+		<button class="checkbox" name="ПРЕДОПЛАТА" title="Требование предоплаты при продаже или Вы готовы сделать предоплату при покупке">С предоплатой</button>
+		<h2 class="header">Кадастровый номер</h2>
+		<input class="price-input-text" name="КАДАСТРОВЫЙ_НОМЕР" type="text" placeholder="АА:ВВ:ССССРРL:КК" title="Када́стровый но́мер — уникальный номер объекта недвижимости, присваиваемый ему при осуществлении кадастрового и технического учёта.">
+
+		<h2 class="header">Документы</h2>
+		<button class="checkbox" name="ЕСТЬ_ДОКУМЕНТЫ" title="Собственник любого объекта недвижимости должен иметь на руках пакет документов, подтверждающих его права на объект, а также содержащих технические и идентификационные характеристики объекта. Без этих документов он не может подтвердить свой 			статус, а также распорядиться недвижимостью (продать, заложить, сдать в аренду). В этот пакет документов входят правоустанавливающие документы, технический паспорт, идентификационные документы на земельный участок. Важным является поддержание этих документов в актуальном состоянии.">
+			С оформлеными документами</button>
+
+		<button id="search_price_button_ok" class="button">ОК</button>
+	</div>
+
+
+
+	<!-- ФОРМА ДОПОЛНИТЕЛЬНЫХ ЧЕКБОКСОВ ДЛЯ ЛЮБОЙ НЕДВИЖИМОСТИ -->
+	<div class="group space-close" id="engineering">
+		<fieldset id="engineering_for_click_all">
+			<h2 class="header">Инженерные коммуникации</h2>
+			<button class="button" id="engineering_button_mark_all">Выбрать все</button>
+			<button class="button" id="engineering_button_unmark_all">Отменить все</button>
+			<button class="checkbox" name="ЭЛЕКТРИЧЕСТВО">Электричество</button>
+			<button class="checkbox" name="ОТОПЛЕНИЕ">Отопление</button>
+			<button class="checkbox" name="ГОРЯЧАЯ_ВОДА">Горячая вода</button>
+			<button class="checkbox" name="ХОЛОДНАЯ_ВОДА">Холодная вода</button>
+			<button class="checkbox" name="ГАЗ">Газ</button>
+			<button class="checkbox" name="ВЕНТИЛЯЦИЯ">Вентиляция</button>
+			<button class="checkbox" name="КАНАЛИЗАЦИЯ">Канализация</button>
+			<button class="checkbox" name="ЛИФТ">Лифт</button>
+			<button class="checkbox" name="ДОМОФОН">Домофон</button>
+			<button class="checkbox" name="ИНТЕРНЕТ">Интернет</button>
+		</fieldset>
+
+		<fieldset>
+			<h2 class="header">Парковка</h2>
+			<button class="checkbox" name="ПОДЗЕМНЫЙ_ПАРКИНГ">Подземный паркинг</button>
+			<button class="checkbox" name="ОТКРЫТАЯ_СТОЯНКА">Открытая стоянка</button>
+			<button class="checkbox" name="МНОГОУРОВНЕВЫЙ_ПАРКИНГ">Многоуровневый паркинг</button>
+			<button class="checkbox" name="КРЫТАЯ_СТОЯНКА">Крытая стоянка</button>
+			<button class="checkbox" name="ОХРАНЯЕМАЯ">Охраняемая</button>
+			<button class="checkbox" name="ХОРОШАЯ_ТРАНСПОРТНАЯ_РАЗВЯЗКА">Хорошая транспортная развязка</button>
+		</fieldset>
+		<button class="button" id="engineering_button_ok">ОК</button>
+	</div>
+
+
+
+	<!--
+	ФОРМА ДЛЯ ПОИСКА АДРЕСА С КАРТОЙ И БЕЗ КАРТЫ
+	НА КАРТЕ ПРИ ДОБАВЛЕНИЯ НЕДВИЖИМОСТИ МОЖНО УКАЗЫВАТЬ МАРКЕРЫ МЕСТ И ВЫДЕЛИТЬ ПЛОЩАДЬ НЕДВИЖИМОСТИ
+	-->
+	<form class="group space-close" id="address">
+		<div class="group space-close" id="address_menu_right">
+			<button type="button" class="radio" id="address_button_with_map">Поиск с картой</button>
+			<button type="button" class="radio" id="address_button_without_map">Поиск без карты</button>
+			<button type="button" class="radio disabled" id="address_button_handed_input">Ввод вручную</button>
+			<button type="button" class="button" id="address_button_ok22">ОК</button>
+		</div>
+
+		<div class="group space-open" id="address_main_content">
+			<div class="group space-close" id="address_marker_div">
+				<h2 class="header">Введите название маркера</h2>
+				<input type="search" class="input_text_full" autocorrect="off" autocapitalize="words" id="address_marker_name" placeholder="Название маркера">
+				<button type="button" class="button" id="address_marker_button_ok">ОК</button>
+			</div>
+			<input type="search" class="input_text_full" autocorrect="off" autocapitalize="words" id="autocomplete" placeholder="Найти адрес недвижимости">
+			<div class="group space-open" id="address_search_without_map">
+				<div class="space-close" id="address_container">
+					<div id="a_c_formatted_address"></div>
+					<div id="a_c_location_lat">Широта: ?</div>
+					<div id="a_c_location_lng">Долгота: ?</div>
+				</div>
+			</div>
+			<div class="group_middle space-close" id="address_handed_input">
+				<label class="label">№ дома <input class="input-text" id="street_number" disabled type="search"></label>
+				<label class="label">Улица <input class="input-text" id="route" disabled type="search"></label>
+				<label class="label">Город<sup class="sup">*</sup> <input class="input-text" id="locality" disabled type="search"></label>
+				<label class="label">Регион <input class="input-text" id="administrative_area_level_1" disabled type="search"></label>
+				<label class="label">Страна <input class="input-text" id="country" disabled type="search"></label>
+				<label class="label">Индекс <input class="input-number" id="postal_code" disabled type="search"></label>
+			</div>
+			<div class="group space-close" id="address_search_with_map">
+				<div id="map"></div>
+			</div>
+			<button class="button" type="reset" id="address_reset">Очистить все</button>
+			<button class="button" type="button" id="address_button_ready">ОК</button>
+			<button class="button space-close" type="button" id="address_button_test">ТЕСТ</button>
+		</div>
+		<div class="space-close" id="address_infowindow_input_ok">
+			<input type="search" class="input-text" id="address_infowindow_input">
+			<button type="button" class="button_for_infowindow" id="address_infowindow_ok">OK</button>
+		</div>
+	</form>
+
+
+
+
+
+	<!--ФОРМА ДЛЯ ДОБАВЛЕНИЯ\УДАЛЕНИЯ ФОТО -->
+	<div class="group space-close" id="photo">
+		<div class="info">
+			Добавляйте фотографии недвижимости, парковки, вида из окна, комнат, помещений и всего того что есть рядом... Чем их больше
+			тем лучше.
+		</div>
+		<div id="photo_container"></div>
+		<label class="button_photo" for="photo_file">
+			<div class="button">Добавить фотку</div>
+		</label>
+		<input class="input_photo" id="photo_file" multiple name="photo_file[]" type="file" accept="image/jpg,image/jpeg,image/png,image/gif">
+		<button class="button" id="photo_button_ok">ОК</button>
+	</div>
+
+
+
+	<!--ЛИСТИНГ НЕДВИЖИМОСТИ-->
+	<div class="group space-close" id="realestate">
+		<div class="field1" id="realestate_deal"></div>
+		<div class="field1" id="realestate_property2"></div>
+		<div class="field1" id="realestate_space"></div>
+		<div class="field1" id="realestate_price"></div>
+		<div class="field1" id="realestate_address"></div>
+		<div class="info" id="realestate_text"></div>
+		<div class="group">
+			<img class="card_image" id="realestate_img0" src="png/dom1.png" alt="Картинка дома" title="" />
+			<img class="card_image" id="realestate_img1" src="png/dom1.png" alt="Картинка дома" title="" />
+			<img class="card_image" id="realestate_img2" src="png/dom1.png" alt="Картинка дома" title="" />
+		</div>
+		<div class="group" id="realestate_property">
+		</div>
+		<div class="group" id="additionally">
+		</div>
+		<button class="button" id="realestate_button_ok">ОК</button>
+	</div>
+
+
+
+	<!--КОНТЕЙНЕР ДЛЯ РЕЗУЛЬТАТОВ ПОИСКА -->
+	<div class="group space-close" id="search_result">
+		<button class="button" id="search_button">Изменить атрибуты поиска</button>
+		<div class="hide" id="MAP_SEARCH"></div>
+		<div class="group" id="search_container"></div>
+	</div>
+
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМЫЕ ЭЛЕМЕНТЫ -->
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМЫЕ ЭЛЕМЕНТЫ -->
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМЫЕ ЭЛЕМЕНТЫ -->
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМЫЕ ЭЛЕМЕНТЫ -->
+	<!-- ДИНАМИЧЕСКИ ДОБАВЛЯЕМАЯ КОМНАТА ДЛЯ НЕДВИЖИМОСТИ КВАРТИРА -->
+	<fieldset class="space-close" id="apartment_new_room">
+		<h3 class="header-small">Комната</h3>
+		<label class="label" title="Например: Кухня, Спальня...">
+			Название <input class="input-text" id="apartment_room" name="НАЗВАНИЕ" type="text" placeholder="Название">
+		</label>
+		<label class="label">
+			Площадь м<sup>2</sup>
+			<input class="input-number" id="apartment_space" name="ПЛОЩАДЬ" placeholder="Число">
+		</label>
+		<label class="label">
+			Окно\Лоджия\Балкон
+			<select class="select" id="apartment_loggia" name="ОКОННЫЙ_БЛОК">
+				<option value="ОКНО">Окно</option>
+				<option value="ЛОДЖИЯ">Лоджия</option>
+				<option value="БАЛКОН">Балкон</option>
+				<option value="НИЧЕГО">Ничего</option>
+			</select>
+		</label>
+		<label class="label" id="apartment_side_label">Сторона света
+			<select class="select" id="apartment_side" name="СТОРОНА_СВЕТА">
+				<option disabled>Выбрать</option>
+				<option value="ЮГ">Юг</option>
+				<option value="ЗАПАД">Запад</option>
+				<option value="ВОСТОК">Восток</option>
+				<option value="СЕВЕР">Север</option>
+				<option value="ЮГО-ВОСТОК">Юго-Восток</option>
+				<option value="ЮГО-ЗАПАД">Юго-Запад</option>
+				<option value="СЕВЕРО-ВОСТОК">Северо-Восток</option>
+				<option value="СЕВЕРО-ЗАПАД">Северо-Запад</option>
+			</select>
+		</label>
+		<label class="label" id="apartment_window_label">
+			С видом на <input class="input-text" id="apartment_window" name="ВИД_НА" type="text" placeholder="двор?">
+		</label>
+		<button class="checkbox space-close" name="ДОЛЕВАЯ_КОМНАТА" id="apartment_owned">Долевая комната</button>
+	</fieldset>
+
+	<!-- ДИНАМИЧЕСКИ ДОБАВЛЯЕМОЕ РАСТЕНИЕ ДЛЯ ЗЕМЕЛЬНОГО УЧАСТКА -->
+	<fieldset class="group space-close" id="parcel_new_plant">
+		<h3 class="header-small">Растение</h3>
+		<label class="label">Название <input class="input-text" id="parcel_plant"
+			name="НАЗВАНИЕ" type="text" placeholder="Выбрать"></label>
+		<label class="label">Площадь <input class="input-number" id="parcel_place_plant"
+			name="ПЛОЩАДЬ" placeholder="Число"></label>
+	</fieldset>
+	<!-- ДИНАМИЧЕСКИ ДОБАВЛЯЕМА ХОЗПОСТРОЙКА ДЛЯ ЗЕМЕЛЬНОГО УЧАСТКА -->
+	<fieldset class="group space-close" id="parcel_new_hoz">
+		<h3 class="header-small">Хозпостройка</h3>
+		<label class="label">Название <input class="input-text" id="parcel_hozpostroyka"
+			name="НАЗВАНИЕ" type="text" placeholder="Название"></label>
+		<label class="label">Площадь <input class="input-number" id="parcel_place_hoz"
+			name="ПЛОЩАДЬ" placeholder="Площадь"></label>
+	</fieldset>
+
+	<!-- ДИНАМИЧЕСКИ ДОБАВЛЯЕМАЯ КОМНАТА ДЛЯ РАЗЛИЧНЫХ ПОМЕЩЕНИЙ -->
+	<div class="group space-close" id="room_new_more">
+		<h3 class="header-small">Дополнительно</h3>
+		<label class="label">Помещение <input class="input-text"
+			name="НАЗВАНИЕ" type="text" id="room_dop_rooms" placeholder="Название"></label>
+		<label class="label">Площадь <input class="input-number"
+			name="ПЛОЩАДЬ" id="room_place" placeholder="Площадь"></label>
+	</div>
+
+	<!-- ДИНАМИЧЕСКИ ДОБАВЛЯЕМОЕ ПОМЕЩЕНИЕ ДЛЯ ГОСТИННИЦЫ -->
+	<fieldset class="space-close" id="hotel_add_more_room">
+		<h3 class="header-small">Дополнительное помещение</h3>
+		<label class="label">Название <input class="input-text"
+			name="НАЗВАНИЕ" id="hotel_name_dop_room" type="text" placeholder="Например прачичная"></label>
+		<label class="label">Площадь <input class="input-number"
+			name="ПЛОЩАДЬ" id="hotel_place_dop" placeholder="В квадратных метрах"></label>
+		<textarea class="textarea" id="hotel_dop_textarea" rows="5" cols="45" name="ТЕКСТ" placeholder="Дополнительная информация для помещения"></textarea>
+	</fieldset>
+
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМОЕ ПОМЕЩЕНИЕ ДЛЯ ДРУГОЙ НЕДВИЖИМОСТИ -->
+	<fieldset class="space-close" id="other_new_main_building">
+		<h3 class="header-small">Здание</h3>
+		<label class="label">Название <input class="input-text"
+			name="НАЗВАНИЕ" id="other_name_building" type="text" placeholder="Например склад"></label>
+		<label class="label">Площадь <input class="input-number"
+			name="ПЛОЩАДЬ" id="other_place_building" placeholder="В квадратных метрах"></label>
+		<label class="label">Этажей <input class="input-number"
+			name="КОЛИЧЕСТВО_ЭТАЖЕЙ" id="other_floor_building" type="number" placeholder="В метрах"></label>
+		<label class="label">Высота этажей <input class="input-number"
+			name="ВЫСОТА_ЭТАЖЕЙ" id="other_height_floor_building" placeholder="В метрах"></label>
+		<label class="label">
+				Тип здания
+				<select class="select" id="other_type_building" name="МАТЕРИАЛ">
+					<option value="" disabled>Выбрать</option>
+					<option value="ПАНЕЛЬНОЕ">Панельное</option>
+					<option value="МОНОЛИТНОЕ">Монолитное</option>
+					<option value="БЛОЧНОЕ">Блочное</option>
+					<option value="КИРПИЧНОЕ">Кирпичное</option>
+				</select>
+			</label>
+
+		<button class="checkbox" id="other_access_building" name="ОТДЕЛЬНЫЙ_ПОДЪЕЗД">Отдельный подъезд</button>
+		<textarea class="textarea" name="ТЕКСТ" id="other_add_textarea" placeholder="Дополнительная информация для здания"></textarea>
+		<div id="other-room-container"></div>
+		<button class="button" id="other-button-add-room">Добавить помещение</button>
+	</fieldset>
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМАЯ КОМНАТА В ПОМЕЩЕНИИ ДЛЯ ДРУГИХ НЕДВИЖИМОСТЕЙ -->
+	<fieldset class="space-close" id="other_new_room_element">
+		<h3 class="header-small">Помещение</h3>
+		<label class="label">Название <input class="input-text"
+			name="НАЗВАНИЕ" id="other_name_room" type="text" placeholder="Например кухня"></label>
+		<label class="label">Площадь <input class="input-number"
+			name="ПЛОЩАДЬ" id="other_place_room" placeholder="В квадратных метрах"></label>
+		<textarea class="textarea" id="other_add_textarea_room" name="ТЕКСТ" placeholder="Дополнительная информация для помещения"></textarea>
+	</fieldset>
+
+	<!--ДИНАМИЧЕСКИ ДОБАВЛЯЕМАЯ КАРТОЧКА ДЛЯ РЕЗУЛЬТАТОВ ПОИСКА-->
+	<div class="card space-close" id="card">
+		<div id="card_price" class="card_price">По догов.</div>
+		<div class="card_space">
+			<div id="card_space" class="card_totalspace">1250</div>м<sup class="card_sup">2</sup></div>
+		<h1 class="card_header">
+			<div id="card_address" class="card_address">Строителей 24В</div>
+		</h1>
+		<img class="card_image" id="card_image" src="/png/dom1.png" alt="Фото недвижимости" title="Фото недвижимости" />
+		<ul class="card_info">
+			<li class="card_type" id="card_type">Часть квартиры, 0.5 комнаты, 2/10 эт., Кирпич</li>
+			<li class="card_text" id="card_text">Срочно 2-комн.квартира пос. Кондратово ( Строителей , Красавинская) ЖК "Медовый". Сдается с отделкой, благоустроенной
+				территорией. Срок сдачи 4-квартал...</li>
+		</ul>
+	</div>
+
+	<!--КАРТИНКА ДЛЯ ЛИСТИНГА -->
+	<img class="card_image space-close" id="listing_image" src="png/dom1.png" alt="Картинка недвижимости" title="Фото" />
+	<!--КРЕСТИК ЗАКРЫТИЯ КАРТОЧЕК -->
+	<div class="button_close space-close" id="divx">x</div>
+	<!--ТАБЛИЧКА-КАРТОЧКА ДЛЯ ДОПОЛНИТЕЛЬНЫХ КОМНАТ У НЕДВИЖИМОСТИ -->
+	<table cellpadding="0" cellspacing="0" border="0" class="group present_room space-close" id="present_room"></table>
+</body>
+
+</html>

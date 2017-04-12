@@ -1,0 +1,149 @@
+{
+"ИДЕНТИФИКАТОР":"30",
+"IDUSER":"2",
+"DEAL":"2",
+"DEALTESTDRIVE":"1",
+"ИМУЩЕСТВО":"7",
+"DATACREATE":"2016-06-03 09:02:48",
+"DATAUPDATE":"2016-06-03 09:02:48",
+"ЦЕНА":"234234",
+"CURRENCY":"1",
+"CASH":"1",
+"CARD":"1",
+"PREPAYMENT":"1",
+"ELECTRONMONEY":"1",
+"CADASTRNUMBER":"234234",
+"ISDOCUMENT":"1",
+"IDREGION":"22",
+"IDDISTRICT":"1341",
+"IDCITY":"6280",
+"IDLOCALITY":"28419",
+"BESIDEPARKINGUNDERGROUND":"1",
+"BESIDEPARKINGLOT":"1",
+"BESIDEPARKINGMULTILEVEL":"1",
+"BESIDEPARKINGCOVERED":"1",
+"BESIDEPARKINGPROTECTION":"1",
+"BESIDEGOODTRANSPORTINTERCHANGE":"1",
+"ENGINEERINGELECTRICITY":"1",
+"ENGINEERINGHEATING":"1",
+"ENGINEERINGHOTWATER":"1",
+"ENGINEERINGCOLDWATER":"1",
+"ENGINEERINGGAS":"1",
+"ENGINEERINGVENTILATION":"1",
+"ENGINEERINGSEWERAGE":"1",
+"ENGINEERINGELEVATOR":"1",
+"ENGINEERINGINTERNET":"1",
+"OTHERSPACE":"5000",
+"OTHERMOREINFO":"9677854576456456456456 grs  srb4w5g45",
+"TABLE2":
+    {
+        "0":
+        {
+            "ID":"8",
+            "IDOTHER":"4",
+            "OTHERBUILDINGTEXTAREA":"qweqwe",
+            "OTHERNEWBUILDINGNAME":"qwe",
+            "OTHERNEWBUILDINGSPACE":"123",
+            "OTHERNEWBUILDINGLOORS":"123",
+            "OTHERNEWBUILDINGFLOORHEIGHT":"123",
+            "OTHERNEWBUILDINGTYPE":"4",
+            "OTHERBUILDINGROOM":
+            {
+                "0":
+                {
+                    "ID":"17",
+                    "IDOTHERBUILDING":"8",
+                    "OTHERNEWROOMMOREINFO":"123",
+                    "OTHERNEWROOMNAME":"123",
+                    "OTHERNEWROOMSPACE":"123"
+                },
+                "1":
+                {
+                    "ID":"18",
+                    "IDOTHERBUILDING":"8",
+                    "OTHERNEWROOMMOREINFO":"123",
+                    "OTHERNEWROOMNAME":"123",
+                    "OTHERNEWROOMSPACE":"123"
+                },
+                "2":
+                {
+                    "ID":"19",
+                    "IDOTHERBUILDING":"8",
+                    "OTHERNEWROOMMOREINFO":"333",
+                    "OTHERNEWROOMNAME":"333",
+                    "OTHERNEWROOMSPACE":"111"
+                },
+                "3":
+                {
+                    "ID":"20",
+                    "IDOTHERBUILDING":"8",
+                    "OTHERNEWROOMMOREINFO":"444",
+                    "OTHERNEWROOMNAME":"444",
+                    "OTHERNEWROOMSPACE":"111"
+                }
+            }
+        },
+        "1":
+        {
+            "ID":"9",
+            "IDOTHER":"4",
+            "OTHERBUILDINGTEXTAREA":"555",
+            "OTHERNEWBUILDINGNAME":"555",
+            "OTHERNEWBUILDINGSPACE":"111",
+            "OTHERNEWBUILDINGLOORS":"111",
+            "OTHERNEWBUILDINGFLOORHEIGHT":"111",
+            "OTHERNEWBUILDINGTYPE":"3",
+            "OTHERNEWBUILDINGSEPARATEENTRANCE":"1",
+            "OTHERBUILDINGROOM":
+            {
+                "0":
+                {
+                    "ID":"21",
+                    "IDOTHERBUILDING":"9",
+                    "OTHERNEWROOMMOREINFO":"666",
+                    "OTHERNEWROOMNAME":"666",
+                    "OTHERNEWROOMSPACE":"111"
+                },
+                "1":
+                {
+                    "ID":"22",
+                    "IDOTHERBUILDING":"9",
+                    "OTHERNEWROOMMOREINFO":"777",
+                    "OTHERNEWROOMNAME":"777",
+                    "OTHERNEWROOMSPACE":"111"
+                },
+                "2":
+                {
+                    "ID":"23",
+                    "IDOTHERBUILDING":"9",
+                    "OTHERNEWROOMMOREINFO":"888",
+                    "OTHERNEWROOMNAME":"888",
+                    "OTHERNEWROOMSPACE":"222"
+                }
+            }
+        },
+        "2":
+        {
+            "ID":"10",
+            "IDOTHER":"4",
+            "OTHERBUILDINGTEXTAREA":"999",
+            "OTHERNEWBUILDINGNAME":"99",
+            "OTHERNEWBUILDINGSPACE":"99",
+            "OTHERNEWBUILDINGLOORS":"9",
+            "OTHERNEWBUILDINGFLOORHEIGHT":"9",
+            "OTHERNEWBUILDINGTYPE":"2",
+            "OTHERNEWBUILDINGSEPARATEENTRANCE":"1",
+            "OTHERBUILDINGROOM":
+            {
+                "0":
+                {
+                    "ID":"24",
+                    "IDOTHERBUILDING":"10",
+                    "OTHERNEWROOMMOREINFO":"999",
+                    "OTHERNEWROOMNAME":"34",
+                    "OTHERNEWROOMSPACE":"222"
+                }
+            }
+        }
+    }
+}

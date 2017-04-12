@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html unselectable = "on">
+<head>
+    <title>Объявления недвижимости</title>
+	<link rel="stylesheet" href="css/beautiful.css"/>
+	<script src="js/code.js"></script>
+	<script src="js/apartment.js"></script>
+	<script src="js/house.js"></script>
+	<script src="js/parcel.js"></script>
+	<script src="js/garage.js"></script>
+	<script src="js/room.js"></script>
+	<script src="js/hotel.js"></script>
+	<script src="js/other.js"></script>
+	<script src="js/price.js"></script>
+	<script src="js/engineering.js"></script>
+	<script src="js/search.js"></script>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body class="group">
+
+
+<div class="group" id="main-menu">
+	<h1 class="header-main" id="main_menu_header_main">Поиск недвижимости</h1>
+	<button class="radio" id="menu-deal">Выбрать тип сделки</button>
+	<button class="radio" id="menu-type-realestate">Выбрать тип недвижимости</button>
+	<button class="radio" id="menu-price">Стоимость и документы</button>
+	<button class="radio" id="menu-address">Адрес</button>
+	<button class="radio" id="menu_engineering">Дополнительно</button>
+	<button class="button" href="private.html?manager=open" id="main-menu-button-send">Найти</button>
+	<button class="button" id="main-menu-button-test">Тест</button>
+</div>
+
+
+
+
+<div class="group space-close" id="deal">
+	<h1 class="header-main">Сделка</h1>
+	<button class="radio" name="DEAL" value="1" id="deal_sale">Продам</button>
+	<button class="radio" name="DEAL" value="2">Куплю</button>
+	<button class="radio disabled" name="DEAL" value="3">Обменяю</button>
+	<button class="radio" name="DEAL" value="4">Арендую</button>
+	<button class="radio" name="DEAL" value="5">Сдам в аренду</button>
+	
+	<button class="checkbox" name="DEALTESTDRIVE" id="deal_button_test_drive">С тест драйвом</button>
+	<button class="button" id="deal_button_ok">ОК</button>
+</div>
+
+
+
+<div class="group space-close" id="property">
+	<h1 class="header-main">Недвижимость</h1>
+	<button class="radio" name="ИМУЩЕСТВО" value="1" id="property_apartment">Квартира, Комната</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="2" id="property_house">Дом, Дача, Коттедж</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="3" id="property_parcel">Земельный участок</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="4" id="property_garage">Гараж, Машиноместо</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="5" id="property_room">Помещение, Склад, Офис</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="6" id="property_hotel">Гостиница</button>
+	<button class="radio" name="ИМУЩЕСТВО" value="7" id="property_other">Другое</button>
+	<button class="button" id="property_button_back">В главное меню</button>	
+</div>
+
+
+<div class="group space-close" id="price">
+	<h1 class="header-main">Стоимость и документы</h1>
+	<label class="price-label-number">
+		Цена <input id="price-price" name="ЦЕНА" class="price-input-number" type="number">
+	</label>
+	<select class="price_select" id="price-currency" name="CURRENCY">
+		<option value="1">₽</option>
+		<option value="2">$</option>
+		<option value="3">€</option>
+	</select>
+
+	<h2 class="header">Способ оплаты</h2>
+	<button class="checkbox" id="price-checkbox-cash" name="CASH" title="Вы готовы оплатить\купить наличкой">Наличка</button>
+	<button class="checkbox" id="price-checkbox-card" name="CARD" title="Вы готовы оплатить\купить переводом на карту">На банковскую карту</button>
+	<button class="checkbox" id="price-checkbox-electron-money" name="ELECTRONMONEY"
+		 title="Вы готовы оплатить\купить электронными деньгами(например яндекс или вебмани)">Электронные деньги</button>
+	<button class="checkbox" id="price-checkbox-prepayment" name="PREPAYMENT"
+		 title="Требование предоплаты при продаже или Вы готовы сделать предоплату при покупке">С предоплатой</button>
+	<h2 class="header">Кадастровый номер</h2>
+	<input class="price-input-text" id="price-codastr-number" name="CADASTRNUMBER" type="text" placeholder="АА:ВВ:ССССРРL:КК" title="Када́стровый но́мер — уникальный номер объекта недвижимости, присваиваемый ему при осуществлении кадастрового и технического учёта.">
+
+	<h2 class="header">Документы</h2>
+	<button class="checkbox" id="price-checkbox-is-document" name="ISDOCUMENT" title="Собственник любого объекта недвижимости должен иметь на руках пакет документов, подтверждающих его права на объект, а также содержащих технические и идентификационные характеристики объекта. Без этих документов он не может подтвердить свой статус, а также распорядиться недвижимостью (продать, заложить, сдать в аренду). В этот пакет документов входят правоустанавливающие документы, технический паспорт, идентификационные документы на земельный участок. Важным является поддержание этих документов в актуальном состоянии.">
+		С оформлеными документами</button>
+
+	<button id="price-ready" class="button">ОК</button>
+</div>
+
+
+
+
+
+<form class="group space-close" id="address">
+    <h1 class="header-main"><div class="with_right_menu">Адрес</div></h1>
+    <div class="group space-open" id="address_main_content">
+        <input type="search" class="input_text_full" autocorrect="off" autocapitalize="words" id="autocomplete"
+               placeholder="Найти адрес недвижимости">
+        <div class="group space-open" id="address_search_without_map">
+            <div class="space-close" id="address_container">
+                <div id="a_c_formatted_address"></div>
+                <div id="a_c_location_lat">Широта: ?</div>
+                <div id="a_c_location_lng">Долгота: ?</div>
+            </div>
+        </div>
+
+        <button class="button" type="reset" id="address_reset">Очистить все</button>
+        <button type="button" class="button" id="address_button_ready">ОК</button>
+    </div>
+</form>
+
+
+	
+
+<div class="group space-close" id="apartment">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="apartment_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Квартира, Комната</h1>
+	<h2 class="header">Целостность</h2>
+	<button class="radio checked" id="apartment-apartment" name="APARTMENTINTEGRITY" value="1">Квартира</button>
+	<button class="radio" id="apartment-part" name="APARTMENTINTEGRITY" value="2">Часть квартиры</button>
+	<h2 class="header">Статус</h2>
+	<button class="radio checked" name="APARTMENTSTATUS" value="1" title="Cтруктурно обособленное помещение в многоквартирном доме, обеспечивающее возможность прямого доступа к помещениям общего пользования в таком доме и состоящее из одной или нескольких комнат, а также мест вспомогательного использования, предназначенных для удовлетворения хозяйственно-бытовых и иных нужд граждан, связанных с их проживанием в таком помещении.">
+		Квартиры</button>
+	<button class="radio" name="APARTMENTSTATUS" value="2" title="Изолированное помещение, которое является недвижимым имуществом и пригодно для постоянного проживания граждан, отвечает установленным санитарным и техническим правилам и нормам, иным требованиям законодательства">
+		Жилого помещения</button>
+	<h2 class="header">Комнаты и площадь</h2>
+	<label class="label">
+		Всего комнат
+		<select class="select_small" name="APARTMENTQUANTITYROOMS">
+			<option>1</option>
+			<option selected>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</label>
+	<label class="label space-close" id="apartment_vsobstvennostikomnat">
+		В собственности
+		<select class="select_small" name="APARTMENTOWNEDROOMS" id="apartment_rooms_owned">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</label>
+
+	<label class="label">Общая площадь <input class="input-number-small" type="number" name="APARTMENTOVERALLSPACE" id="apartment_overall_space"></label>
+	<label class="label">Жилая площадь <input class="input-number-small" type="number" name="APARTMENTRESIDENTIALSPACE"></label>
+
+	<h2 class="header">Добавьте какие есть комнаты</h2>
+	<div id="apartment_container_for_rooms"></div>
+	<button class="button" type="button" id="apartment_add_room">Добавить комнату</button>
+
+	<h2 class="header">Тип дома</h2>
+	<button class="radio" name="APARTMENTTYPEHOUSE" value="1">Панельный</button>
+	<button class="radio" name="APARTMENTTYPEHOUSE" value="2">Монолитный</button>
+	<button class="radio" name="APARTMENTTYPEHOUSE" value="3">Блочный</button>
+	<button class="radio" name="APARTMENTTYPEHOUSE" value="4">Кирпичный</button>		
+	
+	<h2 class="header">Этажность</h2>
+	<label class="label">Скольки этажный дом <input class="input-number-small" type="number" name="APARTMENTNUMBEROFSTOREYS"></label>
+	<label class="label">На каком этаже квартира <input class="input-number-small" type="number" name="APARTMENTFLOOR"></label>
+	
+	<h2 class="header">Другое</h2>
+	<label class="label">Высота потолка <input class="input-number-small" type="number" name="APARTMENTCEILINGHEIGHT"></label>
+	<button class="radio" name="APARTMENTHOUSING" value="1">Вторичное жилье</button>
+	<button class="radio" name="APARTMENTHOUSING" value="2">Первичное жилье</button>
+	<button class="checkbox" name="APARTMENTPLAYGROUND">Детская площадка</button>
+	<button class="checkbox" name="APARTMENTINTERCOM">Есть домофон</button>
+	<button class="checkbox" name="APARTMENTSTUDIO"
+			title="Кварти́ра-сту́дия — тип квартиры, основным отличием которого является отсутствие внутренних перегородок между помещениями. Однако, часто встречаются и многокомнатные студии.">Студия</button>
+	<button class="checkbox" name="APARTMENTQUIETNEIGHBORS">Не шумные соседи</button>
+	
+	<button class="button" id="apartment_button_ready">ОК</button>
+</div>
+<div class="group new_object space-close" id="apartment_new_room">
+	<h3 class="header-small">Комната</h3>
+	<label class="label" title="Можно просто `комната №1 =)`">
+		Комната <input class="input-text" id="apartment_room" name="APARTMENTNEWNAMEROOM" type="text" placeholder="Название"></label>
+	<label class="label">
+		Площадь м<sup>2</sup>
+		<input class="input-number" id="apartment_space" name="APARTMENTNEWROOMSPACE" type="number" placeholder="Число">
+	</label>
+	<label class="label">
+		Окно\Лоджия
+		<select class="select" id="apartment_loggia" name="APARTMENTLOGGIA">
+			<option value="1">Есть окно</option>
+			<option value="2">Есть лоджия</option>
+			<option value="3">Есть балкон</option>
+			<option value="4">Нет</option>
+		</select>
+	</label>
+	<label class="label" id="apartment_side_label">
+		Сторона света
+		<select class="select" id="apartment_side" name="APARTMENTWINDOWSIDE">
+			<option selected disabled>Выбрать</option>
+			<option value="1">Юг</option>
+			<option value="2">Запад</option>
+			<option value="3">Восток</option>
+			<option value="4">Север</option>
+			<option value="5">Юго-Восток</option>
+			<option value="6">Юго-Запад</option>
+			<option value="7">Северо-Восток</option>
+			<option value="8">Северо-Запад</option>
+		</select>
+	</label>
+	<label class="label" id="apartment_window_label">
+		С видом на <input class="input-text" id="apartment_window" name="APARTMENTVIEWFROMTHEWINDOW" type="text" placeholder="двор?">
+	</label>
+	<button class="checkbox" name="APARTMENTOWNED" id="apartment_owned">В собственности</button>
+</div>
+
+
+
+<div class="group space-close" id="house">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="house_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Дом, Часть дома</h1>
+	<h2 class="header">Целостность</h2>
+	<button class="radio checked" id="house_house" name="ISFULLHOUSE" value="1">Дом</button>
+	<button class="radio" id="house_part" name="ISFULLHOUSE" value="2">Часть дома</button>
+	<h2 class="header">Комнаты и площадь</h2>
+	<label class="label" title='Дом с самым большим количеством комнат - это Нолхауз, расположенный вблизи от Севенокса (Великобритания). В нем 365 комнат, по одной на каждый день года и 7 внутренних дворов. Его длина около 120 м. Строительство дома было начато в 1456г. Томасом Бурше, архиепископом Кентерберийским. Около 1603г. дом был расширен Томасом Саквиллем, первым графом Дорсетским. Сейчас домом владеет фонд "Нейшенел Траст".'>
+		Всего комнат
+		<select class="select" name="HOUSEQUANTITYROOMS">
+			<option selected disabled>Выбрать</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</label>
+	<label class="label space-close" id="house_vsobstvennostikomnat">
+		В собственности
+		<select class="select" name="HOUSEOWNEDROOMS" id="house_select_vsobstvennostikomnat">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</label>		
+
+	<label class="label">Общая площадь <input class="input-number" type="number" name="HOUSEOVERALLSPACE" id="houseoverallspace"></label>
+	<label class="label">Жилая площадь <input class="input-number" type="number" name="HOUSERESIDENTIALSPACE"></label>
+
+	<h2 class="header">Этажность</h2>
+	<label class="label">Сколько этажей <input class="input-number" type="number" name="HOUSEHOWMANYFLOORS"></label>
+
+	<h2 class="header">Добавьте какие есть комнаты</h2>
+	<div id="house_container_rooms"></div>
+	<button class="button" id="house_addroom">Добавить комнату</button>
+	
+	<h2 class="header">Тип дома</h2>
+	<button class="radio" name="HOUSETYPEHOUSE" value="1">Панельный</button>
+	<button class="radio" name="HOUSETYPEHOUSE" value="2">Монолитный</button>
+	<button class="radio" name="HOUSETYPEHOUSE" value="3">Блочный</button>
+	<button class="radio" name="HOUSETYPEHOUSE" value="4">Кирпичный</button>
+
+	<h2 class="header">Другое</h2>
+	<label class="label">Высота потолков <input class="input-number" type="number" name="HOUSECEILINGHEIGHT"></label>
+	<button class="radio" name="HOUSEHOUSING" value="1">Вторичное жилье</button>
+	<button class="radio" name="HOUSEHOUSING" value="2">Первичное жилье</button>
+	<button class="checkbox" name="HOUSEPLAYGROUND">Детская площадка</button>
+	<button class="checkbox" name="HOUSEINTERCOM">Есть домофон</button>
+	<button class="checkbox" name="HOUSEQUIETNEIGHBORS">Не шумные соседи</button>
+	<button class="checkbox" name="HOUSECELLAR">Погреб</button>
+	<button class="checkbox" name="HOUSEBASEMENT">Подвал</button>
+	
+	<h2 class="header">Фундамент</h2>
+	<button class="radio" name="HOUSEFOUNDATION" value="1">Ленточный</button>
+	<button class="radio" name="HOUSEFOUNDATION" value="2">Столбчатый</button>
+	<button class="radio" name="HOUSEFOUNDATION" value="3">Плитный</button>
+	<button class="radio" name="HOUSEFOUNDATION" value="4">Континуальный</button>
+	
+	<h2 class="header">Отопление</h2>
+	<button class="radio" name="HOUSEHEATING" value="1">Печное</button>
+	<button class="radio" name="HOUSEHEATING" value="2">Газовое</button>
+	<button class="radio" name="HOUSEHEATING" value="3">Водяное</button>
+	<button class="radio" name="HOUSEHEATING" value="4">Электрическое</button>
+	
+	<h2 class="header">Верх дома</h2>
+	<button class="radio" name="HOUSEHOMETOP" value="1">Мансарда</button>
+	<button class="radio" name="HOUSEHOMETOP" value="2">Чердак</button>
+	
+	<button class="button" id="house_button_ok">ОК</button>
+</div>
+<div class="group new_object space-close" id="house_new_room">
+	<h3 class="header-small">Комната</h3>
+	<label class="label">Комната <input class="input-text" id="house_room" type="text" name="HOUSENEWROOMNAME" placeholder="Например спальня"></label>
+	<label class="label">Площадь м<sup>2</sup><input class="input-number" id="house_space" type="number" name="HOUSENEWROOMSPACE" placeholder="Площадь"></label>
+	<label class="label">
+		Окно\Лоджия
+		<select class="select" id="house_loggia" name="HOUSENEWROOMLOGGIA">
+			<option value="1">Есть окно</option>
+			<option value="2">Есть лоджия</option>
+			<option value="3">Есть балкон</option>
+			<option value="4">Нет</option>
+		</select>
+	</label>
+	<label class="label" id="house_window_label">С видом на
+		<input class="input-number" id="house_window" type="text" name="HOUSENEWROOMVIEWOFTHE" placeholder="горы?"></label>
+	
+	<label class="label" id="house_side_label">
+		Сторона света
+		<select class="select" id="house_side" name="HOUSENEWROOMSIDE">
+			<option selected disabled>Выбрать</option>
+			<option value="1">Юг</option>
+			<option value="2">Запад</option>
+			<option value="3">Восток</option>
+			<option value="4">Север</option>
+			<option value="5">Юго-Восток</option>
+			<option value="6">Юго-Запад</option>
+			<option value="7">Северо-Восток</option>
+			<option value="8">Северо-Запад</option>
+		</select>
+	</label>
+	<button class="checkbox" id="house_owned" name="HOUSENEWROOMOWNED">В собственности</button>
+</div>
+
+
+
+<div class="group space-close" id="parcel">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="parcel_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Земельный участок</h1>
+	<label class="label">Площадь участка <input class="input-number" type="number" name="PARCELPLACE" id="parcel_space"></label>
+	<button class="checkbox" id="parcel_paseka_checkbox" name="PARCELISAPIARY">С пасекой</button>
+	<button class="checkbox" id="parcel_in_garden_checkbox" name="PARCELISGARDEN">С садом</button>
+	<div id="parcel_space_paseka" class="group space-close">
+		<h2 class="header">Пасека</h2>
+		<label class="label">Площадь пасеки <input class="input-number" name="PARCELAPIARYSPACE" type="number" placeholder="Площадь"></label>
+		<label class="label">Ульев <input class="input-number" name="PARCELQUANTITYHIVES" type="number" placeholder="Количество"></label>
+	</div>
+	<div id="parcel_in_garden" class="group space-close">
+		<h2 class="header">Сад</h2>
+		<div id="parcel_container_plants"></div>
+		<button class="button" id="parcel_add_plant_button">Добавить растение</button>
+	</div>
+	<h2 class="header">С возможностью подключить</h2>
+	<button class="checkbox" name="PARCELISELECTRICITY">Электричество</button>
+	<button class="checkbox" name="PARCELISWATERPIPES">Водопровод</button>
+	<button class="checkbox" name="PARCELISGAS">Газ</button>
+	<button class="checkbox" name="PARCELISINTERNET">Интернет</button>
+	<button class="checkbox" name="PARCELISSEWERAGE">Канализация</button>
+	<button class="checkbox" name="PARCELISHEATING">Отопление</button>
+	
+	<h2 class="header">С хозпостройками</h2>
+	<div id="parcel_container_hoz"></div>
+	<button class="button" id="parcel_button_add_hoz">Добавить</button>
+
+	
+	<h2 class="header">Дополнительная информация</h2>
+	<textarea class="textarea" rows="10" cols="85" name="PARCELMOREINFO"></textarea>
+	<button class="button" id="parcel_button_ok">ОК</button>
+</div>
+<div class="group new_object space-close" id="parcel_new_plant">
+	<h3 class="header-small">Растение</h3>
+	<label class="label">Название <input class="input-text" id="parcel_plant" name="PARCELNEWPLANT" type="text" placeholder="Выбрать"></label>
+	<label class="label">Площадь <input class="input-number" id="parcel_place_plant" name="PARCELNEWPLANTPLACE" type="number" placeholder="Число"></label>
+</div>
+<div class="group new_object space-close" id="parcel_new_hoz">
+	<h3 class="header-small">Хозпостройка</h3>
+	<label class="label">Название <input class="input-text" id="parcel_hozpostroyka" name="PARCELHOZBUILDINGGNAME" type="text" placeholder="Название"></label>
+	<label class="label">Площадь <input class="input-number" id="parcel_place_hoz" name="PARCELHOZBUILDINPLACE" type="number" placeholder="Площадь"></label>
+</div>
+
+
+
+
+<div class="group space-close" id="garage">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="garage_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Гараж, машиноместо</h1>
+	<button class="radio checked" id="garage_garage" name="GARAGEGARAGEORPARKINGPLACE" value="1">Гараж</button>
+	<button class="radio" id="garage_mesto" name="GARAGEGARAGEORPARKINGPLACE" value="2">Машиноместо</button>
+
+	<div class="group space-close" id="garage_mesto_expander">
+		<h2 class="header">Тип машиноместа</h2>
+		<button class="radio" name="GARAGETYPEOFPARKING" value="1">Подземный паркинг</button>
+		<button class="radio" name="GARAGETYPEOFPARKING" value="2">Крытая стоянка</button>
+		<button class="radio" name="GARAGETYPEOFPARKING" value="3">Многоуровневый паркинг</button>
+		<button class="radio" name="GARAGETYPEOFPARKING" value="4">Открытая стоянка</button>
+	</div>
+	
+	<div class="group space-open" id="garage_garage_expander" >
+		<h2 class="header">Тип гаража</h2>
+		<button class="radio" name="GARAGETYPEGARAGE" value="1">Железобетонный</button>
+		<button class="radio" name="GARAGETYPEGARAGE" value="2">Металлический</button>
+		<button class="radio" name="GARAGETYPEGARAGE" value="3">Кирпичный</button>
+
+		<h2 class="header">Фундамент</h2>
+		<button class="radio" name="GARAGEFOUNDATION" value="1">Ленточный</button>
+		<button class="radio" name="GARAGEFOUNDATION" value="2">Столбчатый</button>
+		<button class="radio" name="GARAGEFOUNDATION" value="3">Плитный</button>
+		<button class="radio" name="GARAGEFOUNDATION" value="4">Континуальный</button>
+	</div>
+	
+	<h2 class="header">Этажность</h2>
+	<label class="label">Сколько этажей <input class="input-number" name="GARAGEHOWMANYFLOORS" type="number"></label>
+	<label class="label">На каком этаже <input class="input-number" name="GARAGEFLOOR" type="number"></label>
+	
+	<h2 class="header">Другое</h2>
+	<button class="checkbox space-close" name="GARAGEANDPARCELOWNED" id="garagedj9283j">Гараж и земля в собственности</button>
+	<button class="checkbox" name="GARAGEPROTECTED">Охраняется</button>
+	<button class="checkbox" name="GARAGEVIDEOMONITORING">Видеонаблюдение</button>
+	<button class="checkbox" name="GARAGELIGHTING">Освещение</button>
+	<button class="checkbox" name="GARAGECELLAR">Погреб</button>
+	<button class="checkbox" name="GARAGEBASEMENT">Подвал</button>
+	<button class="checkbox" name="GARAGEPIT">Яма</button>
+	<button class="checkbox" name="GARAGESHELVES">Полки</button>
+	
+	<label class="label">Название комплекса <input class="input-text" name="GARAGECOMPLEXNAME" type="text"></label>
+	<label class="label">Площадь <input class="input-number" name="GARAGEPLACE" type="number" id="garage_place"></label>
+	<label class="label">Высота потолков <input class="input-number" name="GARAGECEILINGHEIGHT" type="number"></label>
+	<label class="label">Высота ворот <input class="input-number" name="GARAGEGATEHEIGHT" type="number"></label>
+	
+	<h2 class="header">Дополнительная информация</h2>
+	<textarea class="textarea" rows="10" cols="85" name="GARAGEMOREINFO"></textarea>
+	<button class="button" id="garage_button_ok">ОК</button>
+</div>
+
+
+
+
+
+<div class="group space-close" id="room">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="room_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Помещение</h1>
+	<h2 class="header">Тип помещения</h2>
+	<button class="radio" name="ROOMTYPEROOM" value="1">Офисное(контора)</button>
+	<button class="radio" name="ROOMTYPEROOM" value="2">Торговое</button>
+	<button class="radio" name="ROOMTYPEROOM" value="3">Складское</button>
+	<button class="radio" name="ROOMTYPEROOM" value="4">Свободного назначения</button>
+	<button class="radio" name="ROOMTYPEROOM" value="5">Салон красоты, парикмахерская</button>
+	<button class="radio" name="ROOMTYPEROOM" value="6">Производственного назначения</button>
+	<button class="radio" name="ROOMTYPEROOM" value="7">Общественного питания</button>
+	
+	<h2 class="header">Площадь</h2>
+	<label class="label">Общая площадь м<sup>2</sup> <input class="input-number" name="ROOMSPACE" type="number" id="room_space"></label>
+	
+	<h2 class="header">Дополнительно имеется</h2>
+	<div id="room_container_add_room"></div>
+	<button class="button" id="room_add_room_button">Добавить</button>
+	
+	<h2 class="header">Тип здания</h2>
+	<button class="radio" name="ROOMTYPEBUILDING" value="1">Панельное</button>
+	<button class="radio" name="ROOMTYPEBUILDING" value="2">Монолитное</button>
+	<button class="radio" name="ROOMTYPEBUILDING" value="3">Блочное</button>
+	<button class="radio" name="ROOMTYPEBUILDING" value="4">Кирпичное</button>
+	
+	<h2 class="header">Другое</h2>
+	<label class="label">Высота потолков <input class="input-number" name="ROOMCEILINGHEIGHT" type="number"></label>
+	<button class="checkbox" name="ROOMSEPARATEENTRANCE">Отдельный подъезд</button>
+	<button class="checkbox" name="ROOMSEPARATEELECTRICALPANEL">Отдельный электрощиток</button>
+	
+	<h2 class="header">Этажность</h2>
+	<label class="label">Сколько этажей <input class="input-number" name="ROOMHOWMANYFLOORS" type="number"></label>
+	<label class="label">Какой этаж <input class="input-number" name="ROOMFLOOR" type="number"></label>
+	
+	<h2 class="header">Дополнительная информация</h2>
+	<textarea class="textarea" rows="10" cols="85" name="ROOMMOREINFO"></textarea>
+	<button class="button" id="room_button_ok">ОК</button>
+</div>
+<div class="group new_object space-close" id="room_new_more">
+	<h3 class="header-small">Дополнительно</h3>
+	<label class="label">Помещение <input class="input-text" name="ROOMMOREROOMNAME" type="text" id="room_dop_rooms" placeholder="Название"></label>
+	<label class="label">Площадь <input class="input-number" name="ROOMMOREROONSPACE" type="number" id="room_place" placeholder="Площадь"></label>
+</div>
+
+
+
+
+<div class="group space-close" id="hotel">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="hotel_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Гостиница</h1>
+	<h2 class="header">Общая информация</h2>
+	<label class="label">Сколько этажей <input class="input-number" name="HOTELHOWMANYFLOORS" type="number"></label>
+	<label class="label">Площадь <input class="input-number" name="HOTELSPACE" type="number" id="hotel_space"></label>
+	<label class="label">Сколько номеров <input class="input-number" name="HOTELHOWMANYROOMS" type="number"></label>
+	<label class="label">
+		Сколько звезд
+		<select class="select" name="HOTELHOWMANYSTARS">
+			<option value="5">5</option>
+			<option value="4">4</option>
+			<option value="3">3</option>
+			<option value="2">2</option>
+			<option value="1">1</option>
+		</select>
+	</label>
+	<!--<button class="checkbox" name="HOTELNONSMOKINGROOMS">Номера для не курящих</button>-->
+	<!--<button class="checkbox" name="HOTELFAMILYROOMS">Семейные номера</button>-->
+	<!--<button class="checkbox" name="HOTELINDOORSWIMMINGPOOL">Крытый плавательный бассейн</button>-->
+	<!--<button class="checkbox" name="HOTELSPAWELLNESSCENTRE">Спа и оздоровительный центр</button>-->
+	<!--<button class="checkbox" name="HOTELRESTAURANTDINING">Ресторан \ Столовая</button>-->
+	<!--<button class="checkbox" name="HOTELFITNESSCENTRE">Фитнес-центр</button>-->
+	<!--<button class="checkbox" name="HOTELFITNESSCENTRE">Удобства для гостей с ограниченными физическими возможностями</button>-->
+	<!--<button class="checkbox" name="HOTELMEETINGBANQUET">Конференц-зал</button>-->
+	<!--<button class="checkbox" name="HOTELFACILITIES">Банкетный зал</button>-->
+	<!--<button class="checkbox" name="HOTELBAR">Бар</button>-->
+	<!--<button class="checkbox" name="HOTELHONEYMOONSUITE">Люкс для новобрачных</button>-->
+	<!--<button class="checkbox" name="HOTELBARBERBEAUTYSALON">Парикмахерская/салон красоты</button>-->
+	<!--<button class="checkbox" name="HOTEL">Сауна</button>-->
+	<!--<button class="checkbox" name="HOTEL">Солярий</button>-->
+	<!--<button class="checkbox" name="HOTEL">Турецкая баня</button>-->
+	<!--<button class="checkbox" name="HOTEL">Массаж</button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	<!--<button class="checkbox" name="HOTEL"></button>-->
+	
+	
+	<h2 class="header">Дополнительные помещения</h2>
+	<div id="hotel_container_dop_room"></div>
+	<button class="button" id="hotel_add_dop_button">Добавить</button>
+	
+	<h2 class="header">Тип здания</h2>
+	<button class="radio" name="HOTELTYPEBUILDING" value="1">Панельное</button>
+	<button class="radio" name="HOTELTYPEBUILDING" value="2">Монолитное</button>
+	<button class="radio" name="HOTELTYPEBUILDING" value="3">Блочное</button>
+	<button class="radio" name="HOTELTYPEBUILDING" value="4">Кирпичное</button>
+	
+	<h2 class="header">Фундамент</h2>
+	<button class="radio" name="HOTELFOUNDATION" value="1">Ленточный</button>
+	<button class="radio" name="HOTELFOUNDATION" value="2">Столбчатый</button>
+	<button class="radio" name="HOTELFOUNDATION" value="3">Плитный</button>
+	<button class="radio" name="HOTELFOUNDATION" value="4">Континуальный</button>
+	
+	<h2 class="header">Дополнительная информация</h2>
+	<textarea class="textarea" rows="10" cols="85" name="HOTELMOREINFO"></textarea>
+	<button class="button" id="hotel_button_ok">ОК</button>
+</div>
+<div class="group new_object space-close" id="hotel_add_more_room">
+	<h3 class="header-small">Дополнительное помещение</h3>
+	<label class="label">Название <input class="input-text" name="HOTELMOREROOMNAME" id="hotel_name_dop_room" type="text" placeholder="Например прачичная"></label>
+	<label class="label">Площадь <input class="input-number" name="HOTELMOREROOMSPACE" id="hotel_place_dop" type="number" placeholder="В квадратных метрах"></label>
+	<textarea class="textarea" id="hotel_dop_textarea" rows="5" cols="45" name="HOTELMOREROOMINFO" placeholder="Дополнительная информация для помещения"></textarea>
+</div>
+
+
+
+<div class="group space-close" id="other">
+	<button title="Выбрать другой тип недвижимости" class="button_menu_right" id="other_button_menu_right"><div class="line"></div><div class="line"></div><div class="line"></div></button>
+	<h1 class="header-main">Другое</h1>
+	<label class="label">Общая площадь <input class="input-number" name="OTHERSPACE" type="number"></label>
+	<div id="other-main-container"></div>
+	<button class="button" id="other_button_add_building_new">Добавить здание</button>
+	
+
+	<h2 class="header">Дополнительная информация</h2>
+	<textarea class="textarea" rows="10" cols="85" name="OTHERMOREINFO" placeholder="Подробно об вашей недвижимости"></textarea>
+	<button class="button" id="other_button_ok">ОК</button>
+</div>
+<div class="group new_object space-close" id="other_new_main_building">
+	<h3 class="header-small">Здание</h2>
+	<label class="label">Название <input class="input-text" name="OTHERNEWBUILDINGNAME" id="other_name_building" type="text" placeholder="Например склад"></label>
+	<label class="label">Площадь <input class="input-number" name="OTHERNEWBUILDINGSPACE" id="other_place_building" type="number" placeholder="В квадратных метрах"></label>
+	<label class="label">Этажей <input class="input-number" name="OTHERNEWBUILDINGLOORS" id="other_floor_building" type="number" placeholder="В метрах"></label>
+	<label class="label">Высота этажей <input class="input-number" name="OTHERNEWBUILDINGFLOORHEIGHT" id="other_height_floor_building" placeholder="В метрах" type="number"></label>
+	<label class="label">
+		Тип здания
+		<select class="select" id="other_type_building" name="OTHERNEWBUILDINGTYPE">
+			<option selected disabled>Выбрать</option>
+			<option value="1">Панельное</option>
+			<option value="2">Монолитное</option>
+			<option value="3">Блочное</option>
+			<option value="4">Кирпичное</option>
+		</select>
+	</label>
+	<button class="checkbox" id="other_access_building" name="OTHERNEWBUILDINGSEPARATEENTRANCE">Отдельный подъезд</button>
+	<textarea class="textarea" name="OTHERBUILDINGTEXTAREA" id="other_add_textarea" placeholder="Дополнительная информация для здания"></textarea>
+	<div id="other-room-container"></div>
+	<button class="button" id="other-button-add-room">Добавить помещение</button>
+</div>
+<div class="group new_object space-close" id="other_new_room_element">
+	<h3 class="header-small">Помещение</h3>
+	<textarea class="textarea" id="other_add_textarea_room" name="OTHERNEWROOMMOREINFO" placeholder="Дополнительная информация для помещения"></textarea>
+	<label class="label">Название <input class="input-text" name="OTHERNEWROOMNAME" id="other_name_room" type="text" placeholder="Например кухня"></label>
+	<label class="label">Площадь <input class="input-number" name="OTHERNEWROOMSPACE" id="other_place_room" type="number" placeholder="В квадратных метрах"></label>
+</div>
+
+
+<div class="group space-close" id="engineering">
+	<h1 class="header-main">Дополнительно</h1>
+	<h2 class="header">Инженерные коммуникации</h2>
+	<button class="button" id="engineering_button_mark_all">Выбрать все</button>
+	<button class="button" id="engineering_button_unmark_all">Отменить все</button>
+	<button class="checkbox" name="ENGINEERINGELECTRICITY">Электричество</button>
+	<button class="checkbox" name="ENGINEERINGHEATING">Отопление</button>
+	<button class="checkbox" name="ENGINEERINGHOTWATER">Горячая вода</button>
+	<button class="checkbox" name="ENGINEERINGCOLDWATER">Холодная вода</button>
+	<button class="checkbox" name="ENGINEERINGGAS">Газ</button>
+	<button class="checkbox" name="ENGINEERINGVENTILATION">Вентиляция</button>
+	<button class="checkbox" name="ENGINEERINGSEWERAGE">Канализация</button>
+	<button class="checkbox" name="ENGINEERINGELEVATOR">Лифт</button>
+	<button class="checkbox" name="ENGINEERINGINTERNET">Интернет</button>
+	<h2 class="header">Парковка</h2>
+	<button class="checkbox" name="BESIDEPARKINGUNDERGROUND">Подземный паркинг</button>
+	<button class="checkbox" name="BESIDEPARKINGLOT">Открытая стоянка</button>
+	<button class="checkbox" name="BESIDEPARKINGMULTILEVEL">Многоуровневый паркинг</button>
+	<button class="checkbox" name="BESIDEPARKINGCOVERED">Крытая стоянка</button>
+	<button class="checkbox" name="BESIDEPARKINGPROTECTION">Охраняемая</button>
+	<h2 class="header">Другое</h2>
+	<button class="checkbox" name="BESIDEGOODTRANSPORTINTERCHANGE">Хорошая транспортная развязка</button>
+	<button class="button" id="engineering_button_ok">ОК</button>
+</div>
+
+
+
+
+<!--<div class="space-close" id="small_ad">    -->
+<!--    <img class="small_ad_img" src="png/dom1.png" alt="Картинка дома" title=""/>-->
+<!--    Квартира 52м<sup>2</sup>, 3.200.000 ₽-->
+<!--</div>-->
+
+<div class="button_close space-close" id="divx"></div>
+</body>
+</html>

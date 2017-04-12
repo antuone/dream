@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Reverse Geocoding by Place ID</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+#floating-panel {
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  font-family: 'Roboto','sans-serif';
+  line-height: 30px;
+  padding-left: 10px;
+}
+
+    </style>
+    <style>
+      #floating-panel {
+        width: 440px;
+      }
+      #place-id {
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="floating-panel">
+      <!-- Supply a default place ID for a place in Brooklyn, New York. -->
+      <input id="place-id" type="text" value="ChIJIQn5l5-46EMRPlpNkr_20Dg">
+      <input id="submit" type="button" value="Reverse Geocode by Place ID">
+    </div>
+    <script>
+// Initialize the map.
+function initMap() {
+
+  var geocoder = new google.maps.Geocoder();
+  var infowindow = new google.maps.InfoWindow();
+
+  document.getElementById('submit').addEventListener('click', function() {
+    geocodePlaceId(geocoder);
+  });
+}
+
+// This function is called when the user clicks the UI button requesting
+// a reverse geocode.
+function geocodePlaceId(geocoder) {
+  var placeId = document.getElementById('place-id').value;
+  
+  geocoder.geocode({'placeId': placeId}, function(results, status) {
+    if (status === google.maps.GeocoderStatus.OK) {
+      if (results[0]) {
+        
+        console.dir(results[0]);
+        
+      } else {
+        window.alert('No results found');
+      }
+    } else {
+      window.alert('Geocoder failed due to: ' + status);
+    }
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0YaMfsWh0MyCN_khjY_qLRe6Cli234so&signed_in=true&callback=initMap&language=fr"
+        async defer></script>
+  </body>
+</html>
