@@ -1,0 +1,453 @@
+/*			MAIN		*/
+* {
+	margin: 0;
+	padding: 0;
+	color: black;
+	font-family: sans-serif;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+html,
+body {
+	width: 100%;
+	background-color: #C7C7C7;
+}
+body {
+    display: table;
+    max-width: 600px;
+    margin: auto;
+    /*background-color: #E6E2DD;*/
+    /*height: 100%;*/
+    /*border-right: solid 1px grey;*/
+    /*border-left: solid 1px grey;*/
+    filter: blur(0.17px);
+}
+html {
+	background-color: #F2F1F0;
+	overflow-y: scroll;
+}
+a {
+    color: darkgreen;
+}
+input:hover {
+    cursor: pointer;
+}
+select:hover {
+    cursor: pointer;    
+}
+input, textarea {
+	-moz-user-select: text;
+	-webkit-user-select: text;
+	-o-user-select: text;
+    -khtml-user-select: text;
+    -ms-user-select: text;
+    font-size: 20px;
+}
+sup, .sup {
+	font-size: 20px;
+    color: darkgreen;
+}
+span {
+	font-size: 20px;
+}
+.img {
+	width: 100%;
+}
+.a {
+	text-decoration: underline;
+}
+/*		GOOD COLORS		*/
+
+/*background-color: yellow;*/
+/*background-color: #D94026;*/
+/*background-color: #FB9C10;*/
+/*background-color: #EA8B02;*/
+/*background-color: #00AE5D;*/
+/*background-color: #4659A5;*/
+/*background-color: #00C1F5;*/
+/*background-color: #4C9ED9;*/
+/*background-color: #F14941;*/
+/*background-color: #D97E00;*/
+/*background-color: #FBAA31;*/
+/*background-color: #CADFAA;*/
+
+.a_button {
+	text-decoration: underline;
+	display: inline-block;
+	background-color: #FBAA31;
+    cursor: pointer;
+    width: 99%;
+    margin: 5px 0px 5px 0px;
+    padding: 5px 0px 5px 0px; 
+    border: solid 1px darkgreen;
+    border-radius: 3px;
+    font-size: 25px;
+    color: darkgreen;
+}
+#address_container {
+	font-size: 25px;
+	font-weight: bold;
+	margin: 20px 0px 20px 0px;
+}
+#a_c_location_lat {
+	margin-top: 20px;
+	color: grey;
+}
+#a_c_location_lng {
+	color: grey;
+}
+/*		REALESTATE		*/
+
+
+.photo-images-one {
+    width: 600px;
+    position: relative;
+    display: inline-block;
+    margin-left: 6px;
+}
+.photo-images-one img {
+    width: 600px;
+    border: solid 1px black;
+
+}
+.input_photo {
+    list-style-type: none;
+    height: 0px;
+}
+.photo-images-one div {
+    z-index: 100;
+    position: absolute;
+    top: 1px;
+    left: 20px;
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.group {
+    text-align: center;
+    width: 100%;
+    /*display: inline-block;*/
+}
+.group_middle {
+	display: inline-block;
+    text-align: center;
+    width: 350px;
+}
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 5px;
+    /*background-color: #FFA500;*/
+    background-color: #DC4C34;
+    border: solid 1px black;
+    /*border-radius: 10px;*/
+    font-size: 25px;
+}
+.button_close {
+    float: left;
+    /*position: absolute; */
+    color: red;
+	cursor: pointer;
+    padding: 5px 0px 0px 5px;
+    /*text-decoration: underline;*/
+}
+.button_photo {
+    display: inline-block;
+    /*line-height: 100px;*/
+    width: 100%;
+}
+.button_for_infowindow {
+	font-size: 20px;
+}
+.button_menu_left {
+	float: left;
+	margin: 1px 0px 0px 5px;
+	cursor: pointer;
+}
+.line {
+	width: 50px;
+	height: 5px;
+	background-color: grey;
+	border-radius: 2px;
+	margin: 5px;
+}
+.button_menu_right {
+	float: right;
+	margin: 1px 5px 0px 0px;
+	cursor: pointer;
+}
+.circle {
+    width: 6px;
+	height: 6px;
+	background-color: black;
+	border-radius: 3px;
+	margin: 4px;
+}
+.with_right_menu {
+	padding-left: 70px;
+}
+.error {
+    background-color: #DA4547;
+    font-size: 30px;
+    margin-top: 1px; 
+}
+.new_object {
+    margin-top: 3px;
+    border: solid 1px grey;
+    width: 99.5%;
+}
+.radio {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: #649A9E;
+    margin-top: 3px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+    color: black;
+    width: 100%;
+    /*border: none;*/
+    font-size: 25px;
+    border: solid 1px black;
+    border-radius: 2px;
+}
+.radio:focus, .checkbox:focus, input:focus, select:focus, .button:focus {
+    /*border: solid 4px orange;*/
+}
+.checkbox {
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    background-color: grey;
+    margin-top: 1px;
+    list-style-type: none;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    border: solid 1px black;
+    /*border-radius: 1px;*/
+    font-size: 25px;
+}
+.header, .header-main {
+    display: block;
+    text-align: center;
+    margin-top: 3px;
+    font-weight: bold;
+    list-style-type: none;
+    cursor: default;
+}
+.header-main {
+    background-color: #ACB78E;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+}
+.header {
+    background-color: #89AC76;
+    padding: 2px 0px 2px 0px;
+    font-size: 25px;
+}
+.header-small {
+	display: block;
+    text-align: center;
+    margin-top: 3px;
+    font-weight: bold;
+    list-style-type: none;
+    cursor: default;
+    background-color: #CADFAA;
+    padding: 0px 0px 0px 0px;
+    font-size: 20px;
+}
+.label {
+    display: block;
+    cursor: pointer;
+    text-align: right;
+    font-size: 20px;
+    /*background-color: white;*/
+    margin-top: 3px;
+    color: black;
+    width: 100%;
+    min-height: 30px;
+}
+.input-number, .input-text {
+	width: 200px;
+}
+.select {
+    width: 200px;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.select option {
+	font-size: 30px;
+}
+.input-number {
+    margin-right: 10px;
+    text-align: center;
+}
+.input-text {
+    margin-right: 10px;
+    text-align: center;
+}
+.input_text_full {
+    margin: 5px 0px 2px 0px;
+    padding: 5px 0px 5px 0px;
+    width: 97%;
+    text-align: center;
+}
+.select_small {
+	text-align: center;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.input-number-small {
+    margin-right: 10px;
+    text-align: center;
+}
+.input-number-small, .select_small {
+	width: 100px;
+}
+.textarea {
+    font-size: 20px;
+    width: 98%;
+}
+.info, .info_council, .info_star {
+	margin: 4px;
+}
+.info {
+    font-size: 20px;
+    margin-left: 10px;
+}
+.info b {
+    font-size: 20px;
+    font-weight: bold;
+}
+.info_star {
+    font-size: 15px;
+    margin-left: 10px;
+}
+.info_council {
+    font-size: 15px;
+    margin-left: 10px;	
+}
+.space-open {
+    max-height: 50000px;
+    opacity: 1;
+    overflow: hidden;
+    transition: opacity 0.5s, max-height 2s;
+}
+.space-close {
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: inline-block;
+}
+.checked {
+    background-color: orange;
+}
+.disabled {
+    color: grey;
+}
+
+
+
+/*		PRICE		*/
+
+
+
+
+.price-label-number {
+    margin-left: 15px;
+    font-size: 20px;
+}
+.price-input-text {
+    width: 97%;
+    text-align: center;
+    margin-top: 4px;
+}
+.price-input-number {
+    width: 200px;
+    text-align: center;
+    font-size: 20px;
+}
+.price_select {
+    text-align: center;
+    font-size: 20px;
+}
+.price_select option {
+	font-size: 20px;
+}
+
+
+/*		ADDRESS		*/
+.address-input-text {
+    width: 85%;
+    height: 75px;
+    
+    margin-top: 15px;
+    text-align: left;
+}
+#address-select {
+    text-align: center;
+}
+.beside-list {
+    max-height: 98%;
+    width: 98%;
+    max-width: 993px;
+    overflow: auto;
+    border: 1px solid #D3D3D3;
+    padding: 3px;
+    display: none;
+    z-index: 2000;
+    background-color: white;
+    text-align: left;
+    overflow-y: scroll;
+}
+.beside-list-element {
+
+    padding: 25px 0px 25px 0px;
+}
+.beside-list div:hover {
+    background-color: #A8E4A0;
+}
+.focus-element {
+    background-color: orange;
+    padding: 25px 0px 25px 0px;
+}
+.no-focus-element {
+    background-color: white;
+    padding: 25px 0px 25px 0px;
+}
+#address-select-inputx {
+    padding: 15px 30px 15px 30px;
+    text-align: center;
+}
+.re_img {
+	float: left;
+}
+.re_price {
+    float: right;
+    margin: 6px 5px 0px 0px;
+}
+#map {
+	margin-top: 5px;
+	background-color: grey;
+	width: 100%;
+	min-height: 400px;
+}
+.infowindow {
+	overflow: auto;
+	font-size: 16px;
+}

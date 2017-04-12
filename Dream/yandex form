@@ -1,0 +1,25 @@
+<iframe frameborder="0" 
+	allowtransparency="true"
+	scrolling="no"
+	src="https://money.yandex.ru/embed/shop.xml?account=410014232094004&
+						    quickpay=shop&
+						    payment-type-choice=on&
+						    mobile-payment-type-choice=on&
+				 		    writer=seller&
+	targets=%D0%92%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BE%D0%B1%D1%8A%D1%8F%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F&
+						    targets-hint=&
+						    default-sum=450&
+						    button-text=01&
+						    successURL="
+	width="450"
+	height="198">
+</iframe>
+
+
+
+https://money.yandex.ru/pay/carddetails.xml?requestid=323538343939373134375f64643839653239386363306531363737303630343039316637323733386136313432383863363061
+
+
+org_id=fsymclue
+&session_id=6263310f8c798700e054455922e318c6
+&tp=578700
